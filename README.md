@@ -1,3 +1,9 @@
+# 버전 정보
+keycloak main version : 11.0.2
+hyperauth server version : b1.1.1.18
+jboss module version : 1.10.1.Final
+wildfly core version : 12.0.3.Final
+
 # Install Guide
 
 ## Install Postgresql 
