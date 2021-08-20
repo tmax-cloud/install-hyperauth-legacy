@@ -530,6 +530,39 @@ module.controller('UserDetailCtrl', function($scope, realm, user, BruteForceUser
     $scope.removeAttribute = function(key) {
         delete $scope.user.attributes[key];
     }
+
+
+
+    ///////
+    $scope.importFile = function($fileContent){
+        console.log(document.getElementById('profilePicture').files[0].name);
+        try{
+            chk(document.getElementById('profilePicture').files[0].name);
+        } catch (e) {
+            console.error(e);
+            return;
+        }
+        console.log('image file get');
+        $scope.importing = true;
+
+    };
+
+    function chk(obj) {
+        if (/(\.gif|\.jpg|\.jpeg|\.png|\.svg)$/i.test(obj == false)) {
+            Notifications.error('Unable to parse IMG file.');
+            throw new Error('Unable to parse IMG file.');
+        }
+        return;
+    }
+
+
+
+
+
+
+    /////////
+
+
 });
 
 module.controller('UserCredentialsCtrl', function($scope, realm, user, $route, $location, RequiredActions, User, UserExecuteActionsEmail,
