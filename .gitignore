@@ -1,4 +1,3 @@
-standalone/log/*
-standalone/tmp/*
-standalone/configuration/standalone_xml_history/*
-standalone/configuration/logging.properties
+standalone/log/
+standalone/tmp/
+standalone/configuration/standalone_xml_history/
