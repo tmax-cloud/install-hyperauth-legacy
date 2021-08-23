@@ -147,29 +147,21 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:jboss/datasources/KeycloakDS" pool-name="KeycloakDS" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:postgresql://localhost:5432/keycloak</connection-url>
-                    <driver>postgresql</driver>
-                    <pool>
-                        <flush-strategy>IdleConnections</flush-strategy>
-                    </pool> 
+                <datasource jndi-name="java:jboss/datasources/KeycloakDS" pool-name="KeycloakDS" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
+                    <connection-url>jdbc:h2:${jboss.server.data.dir}/keycloak;AUTO_SERVER=TRUE</connection-url>
+                    <driver>h2</driver>
                     <security>
-                        <user-name>keycloak</user-name>
-                        <password>keycloak</password>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
                     </security>
-                    <validation>
-                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-                        <background-validation>true</background-validation>
-                        <background-validation-millis>60000</background-validation-millis>
-                    </validation> 
+                    <pool>
+                        <max-pool-size>100</max-pool-size>
+                    </pool>
                 </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
-                    <driver name="postgresql" module="org.postgresql">
-                        <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
-                    </driver> 
                 </drivers>
             </datasources>
         </subsystem>
@@ -523,11 +515,10 @@
             <master-realm-name>master</master-realm-name>
             <scheduled-task-interval>900</scheduled-task-interval>
             <theme>
-                <staticMaxAge>2592000</staticMaxAge>
-                <cacheThemes>true</cacheThemes>
-                <cacheTemplates>true</cacheTemplates>
+                <staticMaxAge>1</staticMaxAge>
+                <cacheThemes>false</cacheThemes>
+                <cacheTemplates>false</cacheTemplates>
                 <welcomeTheme>tmax</welcomeTheme>
-                <default>tmax</default>
                 <dir>${jboss.home.dir}/themes</dir>
             </theme>
             <spi name="eventsStore">
@@ -556,7 +547,6 @@
                         <property name="initializeEmpty" value="true"/>
                         <property name="migrationStrategy" value="update"/>
                         <property name="migrationExport" value="${jboss.home.dir}/keycloak-database-update.sql"/>
-                        <property name="schema" value="public"/>
                     </properties>
                 </provider>
             </spi>
@@ -602,11 +592,8 @@
             <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
         </interface>
         <interface name="public">
-            <any-address/>
+            <inet-address value="${jboss.bind.address:127.0.0.1}"/>
         </interface>
-        <interface name="unsecure">
-            <inet-address value="${jboss.bind.address.unsecure:127.0.0.1}"/>
-        </interface> 
     </interfaces>
     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
         <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>

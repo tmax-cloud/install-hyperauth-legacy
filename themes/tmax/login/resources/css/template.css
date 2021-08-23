@@ -732,7 +732,7 @@ Register - User Information
   padding: 0;
   font-size: 14px;
   font-weight: normal;
-  color: #042a54;
+  color: #555555;
 }
 
 @media (min-width: 499px) {
@@ -746,12 +746,19 @@ div.form-group .form-control {
   background: #ffffff;
   padding: 0 15px;
   height: 40px;
-  border: 1px solid #aeaeae;
-  border-radius: 4px;
+  border: 1px solid #a6abbb;
+  border-radius: 8px;
   font-size: 14px;
-  color: #000000;
+  color:  #042a54;
   line-height: 16px;
   font-weight: normal;
+}
+
+div.form-group .form-control::placeholder {
+  font-size: 14px;
+  color:  #999999;
+  
+
 }
 
 div.form-group .form-control-short-bottom {
@@ -812,12 +819,13 @@ div.form-group .form-control.has-error::placeholder {
 .template-body .btn-primary {
   height: 50px;
   background: #042a54;
-  border-radius: 4px;
-  border: 0;
+  border-radius: 10px;
+  box-shadow: 1px 4px 12px 4px rgba(62,64,68,0.09);
+  border:0;
   font-size: 16px;
   color: #ffffff;
   font-family: "Noto Sans KR";
-  font-weight: 700;
+  font-weight: medium;
 }
 
 .template-body .btn-primary:hover {
