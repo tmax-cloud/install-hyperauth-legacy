@@ -182,3 +182,144 @@
 2021-08-23 14:48:35,620 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = hyperauth-spi.jar
 2021-08-23 14:48:35,673 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0016: Replaced deployment "hyperauth-spi.jar" with deployment "hyperauth-spi.jar"
 2021-08-23 14:48:35,680 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0002: Content removed from location C:\Users\tmax\Documents\install-hyperauth-legacy\standalone\data\content\fd\371b10b95fa9b1449957e45135c9d5c1c768dd\content
+2021-08-23 14:52:02,641 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0272: Suspending server
+2021-08-23 14:52:02,643 INFO  [org.jboss.as.ejb3] (Thread-1) WFLYEJB0493: EJB subsystem suspension complete
+2021-08-23 14:52:02,644 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2021-08-23 14:52:02,651 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = hyperauth-spi.jar
+2021-08-23 14:52:02,654 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/KeycloakDS]
+2021-08-23 14:52:02,656 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2021-08-23 14:52:02,658 INFO  [org.keycloak.subsystem.server.extension.KeycloakProviderDeploymentProcessor] (MSC service thread 1-6) Undeploying Keycloak provider: hyperauth-spi.jar
+2021-08-23 14:52:02,658 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTPS listener https suspending
+2021-08-23 14:52:02,658 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2021-08-23 14:52:02,660 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 67) WFLYUT0022: Unregistered web context: '/auth' from server 'default-server'
+2021-08-23 14:52:02,667 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment hyperauth-spi.jar (runtime-name: hyperauth-spi.jar) in 18ms
+2021-08-23 14:52:02,670 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2021-08-23 14:52:02,672 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2021-08-23 14:52:02,674 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0019: Host default-host stopping
+2021-08-23 14:52:02,675 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 72) WFLYCLINF0003: Stopped authenticationSessions cache from keycloak container
+2021-08-23 14:52:02,675 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 71) WFLYCLINF0003: Stopped offlineSessions cache from keycloak container
+2021-08-23 14:52:02,676 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 73) WFLYCLINF0003: Stopped keys cache from keycloak container
+2021-08-23 14:52:02,676 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment keycloak-server.war (runtime-name: keycloak-server.war) in 28ms
+2021-08-23 14:52:02,677 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow HTTP listener default suspending
+2021-08-23 14:52:02,677 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2021-08-23 14:52:02,677 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 67) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2021-08-23 14:52:02,677 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 2.1.3.Final stopping
+2021-08-23 14:52:02,678 INFO  [org.infinispan.manager.DefaultCacheManager] (MSC service thread 1-4) Stopping cache manager null on null
+2021-08-23 14:52:02,679 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 75) WFLYCLINF0003: Stopped loginFailures cache from keycloak container
+2021-08-23 14:52:02,680 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 74) WFLYCLINF0003: Stopped actionTokens cache from keycloak container
+2021-08-23 14:52:02,681 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 81) WFLYCLINF0003: Stopped clientSessions cache from keycloak container
+2021-08-23 14:52:02,681 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 79) WFLYCLINF0003: Stopped offlineClientSessions cache from keycloak container
+2021-08-23 14:52:02,681 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 80) WFLYCLINF0003: Stopped sessions cache from keycloak container
+2021-08-23 14:52:02,682 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 82) WFLYCLINF0003: Stopped authorization cache from keycloak container
+2021-08-23 14:52:02,682 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 77) WFLYCLINF0003: Stopped users cache from keycloak container
+2021-08-23 14:52:02,682 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 78) WFLYCLINF0003: Stopped work cache from keycloak container
+2021-08-23 14:52:02,683 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 76) WFLYCLINF0003: Stopped realms cache from keycloak container
+2021-08-23 14:52:02,684 INFO  [org.infinispan.manager.DefaultCacheManager] (MSC service thread 1-8) Stopping cache manager null on null
+2021-08-23 14:52:02,690 INFO  [org.jboss.as] (MSC service thread 1-5) WFLYSRV0050: Keycloak 11.0.2 (WildFly Core 12.0.3.Final) stopped in 42ms
+2021-08-23 14:52:27,731 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Users\tmax\Documents\install-hyperauth-legacy\standalone\deployments
+2021-08-23 14:52:27,741 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2021-08-23 14:52:27,741 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "hyperauth-spi.jar" (runtime-name: "hyperauth-spi.jar")
+2021-08-23 14:52:27,745 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2021-08-23 14:52:27,745 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+2021-08-23 14:52:27,798 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow HTTPS listener https listening on 0.0.0.0:8443
+2021-08-23 14:52:28,571 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-6) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2021-08-23 14:52:28,571 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-8) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2021-08-23 14:52:28,592 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-8) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2021-08-23 14:52:28,824 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started client-mappings cache from ejb container
+2021-08-23 14:52:28,833 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0002: Started work cache from keycloak container
+2021-08-23 14:52:28,833 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 57) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2021-08-23 14:52:28,833 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 58) WFLYCLINF0002: Started sessions cache from keycloak container
+2021-08-23 14:52:28,833 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0002: Started offlineClientSessions cache from keycloak container
+2021-08-23 14:52:28,834 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2021-08-23 14:52:28,833 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 66) WFLYCLINF0002: Started actionTokens cache from keycloak container
+2021-08-23 14:52:28,833 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0002: Started clientSessions cache from keycloak container
+2021-08-23 14:52:28,834 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 68) WFLYCLINF0002: Started authenticationSessions cache from keycloak container
+2021-08-23 14:52:28,889 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0002: Started authorization cache from keycloak container
+2021-08-23 14:52:28,889 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 67) WFLYCLINF0002: Started realms cache from keycloak container
+2021-08-23 14:52:28,890 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0002: Started keys cache from keycloak container
+2021-08-23 14:52:28,891 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started users cache from keycloak container
+2021-08-23 14:52:28,989 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0273: Excluded subsystem webservices via jboss-deployment-structure.xml does not exist.
+2021-08-23 14:52:29,619 INFO  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2021-08-23 14:52:29,996 INFO  [org.keycloak.url.DefaultHostnameProviderFactory] (ServerService Thread Pool -- 62) Frontend: <request>, Admin: <frontend>, Backend: <request>
+2021-08-23 14:52:30,053 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-7) WFLYSRV0018: Deployment "deployment.hyperauth-spi.jar" is using a private module ("org.keycloak.keycloak-server-spi-private") which may be changed or removed in future versions without notice.
+2021-08-23 14:52:30,054 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-7) WFLYSRV0018: Deployment "deployment.hyperauth-spi.jar" is using a private module ("org.keycloak.keycloak-services") which may be changed or removed in future versions without notice.
+2021-08-23 14:52:30,054 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-7) WFLYSRV0018: Deployment "deployment.hyperauth-spi.jar" is using a private module ("org.keycloak.keycloak-saml-core-public") which may be changed or removed in future versions without notice.
+2021-08-23 14:52:30,054 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-7) WFLYSRV0018: Deployment "deployment.hyperauth-spi.jar" is using a private module ("org.keycloak.keycloak-model-jpa") which may be changed or removed in future versions without notice.
+2021-08-23 14:52:30,058 INFO  [org.keycloak.subsystem.server.extension.KeycloakProviderDeploymentProcessor] (MSC service thread 1-4) Deploying Keycloak provider: hyperauth-spi.jar
+2021-08-23 14:52:30,063 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0004: Deploying JDBC-compliant driver class com.tmax.tibero.jdbc.TbDriver (version 6.0)
+2021-08-23 14:52:30,066 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = hyperauth-spi.jar
+2021-08-23 14:52:30,070 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: user (com.tmax.hyperauth.rest.UserProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,070 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: agreement (com.tmax.hyperauth.rest.AgreementProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,070 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: sms (com.tmax.hyperauth.rest.SMSCodeProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,070 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: email (com.tmax.hyperauth.rest.EmailProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,070 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: password (com.tmax.hyperauth.rest.PasswordProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,071 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: groupMember (com.tmax.hyperauth.rest.GroupMemberProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,071 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: session (com.tmax.hyperauth.rest.SessionProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,071 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: group (com.tmax.hyperauth.rest.GroupProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,071 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: console (com.tmax.hyperauth.rest.ConsoleProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,071 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: version (com.tmax.hyperauth.rest.VersionProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,071 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: picture (com.tmax.hyperauth.rest.PictureProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,072 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: metrics (com.tmax.hyperauth.eventlistener.prometheus.MetricsEndpointFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+2021-08-23 14:52:30,076 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: naver-user-attribute-mapper (com.tmax.hyperauth.identity.naver.NaverUserAttributeMapper) is implementing the internal SPI identity-provider-mapper. This SPI is internal and may change without notice
+2021-08-23 14:52:30,077 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: kakao-user-attribute-mapper (com.tmax.hyperauth.identity.kakao.KakaoUserAttributeMapper) is implementing the internal SPI identity-provider-mapper. This SPI is internal and may change without notice
+2021-08-23 14:52:30,079 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: secret-question (com.tmax.hyperauth.authenticator.secretQuestion.SecretQuestionCredentialProviderFactory) is implementing the internal SPI credential. This SPI is internal and may change without notice
+2021-08-23 14:52:30,088 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: secret-question-authenticator (com.tmax.hyperauth.authenticator.secretQuestion.SecretQuestionAuthenticatorFactory) is implementing the internal SPI authenticator. This SPI is internal and may change without notice
+2021-08-23 14:52:30,088 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: security-policy-authenticator (com.tmax.hyperauth.authenticator.securityPolicy.SecurityPolicyAuthenticatorFactory) is implementing the internal SPI authenticator. This SPI is internal and may change without notice
+2021-08-23 14:52:30,089 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: email-otp-authenticator (com.tmax.hyperauth.authenticator.otp.EmailOTPAuthenticatorFactory) is implementing the internal SPI authenticator. This SPI is internal and may change without notice
+2021-08-23 14:52:30,089 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: password-update-alert-authenticator (com.tmax.hyperauth.authenticator.passwordUpdateAlert.PasswordUpdateAlertAuthenticatorFactory) is implementing the internal SPI authenticator. This SPI is internal and may change without notice
+2021-08-23 14:52:30,089 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: withdrawal-cancel-authenticator (com.tmax.hyperauth.authenticator.withdrawalCancel.WithdrawalCancelAuthenticatorFactory) is implementing the internal SPI authenticator. This SPI is internal and may change without notice
+2021-08-23 14:52:30,089 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: selectBoxAuthenticator (com.tmax.hyperauth.authenticator.authSelectBox.selectAuthenticatorFactory) is implementing the internal SPI authenticator. This SPI is internal and may change without notice
+2021-08-23 14:52:30,093 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: secret_question_config (com.tmax.hyperauth.authenticator.secretQuestion.SecretQuestionRequiredActionFactory) is implementing the internal SPI required-action. This SPI is internal and may change without notice
+2021-08-23 14:52:30,099 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: naver (com.tmax.hyperauth.identity.naver.NaverIdentityProviderFactory) is implementing the internal SPI social. This SPI is internal and may change without notice
+2021-08-23 14:52:30,100 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: kakao (com.tmax.hyperauth.identity.kakao.KakaoIdentityProviderFactory) is implementing the internal SPI social. This SPI is internal and may change without notice
+2021-08-23 14:52:30,103 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: tmax-phone-validation (com.tmax.hyperauth.register.PhoneValidationForm) is implementing the internal SPI form-action. This SPI is internal and may change without notice
+2021-08-23 14:52:30,105 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: hyperauth-entity-provider (com.tmax.hyperauth.jpa.HyperauthJpaEntityProviderFactory) is implementing the internal SPI jpa-entity-provider. This SPI is internal and may change without notice
+2021-08-23 14:52:30,108 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: hyperauth_event_listener (com.tmax.hyperauth.eventlistener.HyperauthEventListenerProviderFactory) is implementing the internal SPI eventsListener. This SPI is internal and may change without notice
+2021-08-23 14:52:30,109 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: kafka_producer (com.tmax.hyperauth.eventlistener.kafka.producer.KafkaEventListenerProviderFactory) is implementing the internal SPI eventsListener. This SPI is internal and may change without notice
+2021-08-23 14:52:30,109 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: prometheus_metric_listener (com.tmax.hyperauth.eventlistener.prometheus.MetricsEventListenerFactory) is implementing the internal SPI eventsListener. This SPI is internal and may change without notice
+2021-08-23 14:52:30,111 WARN  [org.keycloak.services] (ServerService Thread Pool -- 62) KC-SERVICES0047: bcrypt (com.tmax.hyperauth.passwordhash.BCryptPasswordHashProviderFactory) is implementing the internal SPI password-hashing. This SPI is internal and may change without notice
+2021-08-23 14:52:30,116 INFO  [com.tmax.hyperauth.eventlistener.HyperauthEventListenerProviderFactory] (ServerService Thread Pool -- 62) Register UserDeleteJob Cronjob
+2021-08-23 14:52:30,161 INFO  [org.quartz.impl.StdSchedulerFactory] (ServerService Thread Pool -- 62) Using default implementation for ThreadExecutor
+2021-08-23 14:52:30,163 INFO  [org.quartz.simpl.SimpleThreadPool] (ServerService Thread Pool -- 62) Job execution threads will use class loader of thread: ServerService Thread Pool -- 62
+2021-08-23 14:52:30,172 INFO  [org.quartz.core.SchedulerSignalerImpl] (ServerService Thread Pool -- 62) Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-08-23 14:52:30,172 INFO  [org.quartz.core.QuartzScheduler] (ServerService Thread Pool -- 62) Quartz Scheduler v.2.3.2 created.
+2021-08-23 14:52:30,173 INFO  [org.quartz.simpl.RAMJobStore] (ServerService Thread Pool -- 62) RAMJobStore initialized.
+2021-08-23 14:52:30,173 INFO  [org.quartz.core.QuartzScheduler] (ServerService Thread Pool -- 62) Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-08-23 14:52:30,173 INFO  [org.quartz.impl.StdSchedulerFactory] (ServerService Thread Pool -- 62) Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2021-08-23 14:52:30,174 INFO  [org.quartz.impl.StdSchedulerFactory] (ServerService Thread Pool -- 62) Quartz scheduler version: 2.3.2
+2021-08-23 14:52:30,174 INFO  [org.quartz.core.QuartzScheduler] (ServerService Thread Pool -- 62) Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2021-08-23 14:52:30,186 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2021-08-23 14:52:30,188 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2021-08-23 14:52:30,190 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started authorizationRevisions cache from keycloak container
+2021-08-23 14:52:30,191 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (ServerService Thread Pool -- 62) Node name: desktop-vjn1vpi, Site name: null
+2021-08-23 14:52:32,294 INFO  [org.keycloak.connections.jpa.updater.liquibase.LiquibaseJpaUpdaterProvider] (ServerService Thread Pool -- 62) Updating database. Using changelog META-INF/database-changelog.xml
+2021-08-23 14:52:32,379 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 62) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2021-08-23 14:52:32,430 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 62) HHH000412: Hibernate Core {5.3.17.Final}
+2021-08-23 14:52:32,432 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 62) HHH000206: hibernate.properties not found
+2021-08-23 14:52:32,556 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 62) HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2021-08-23 14:52:32,696 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 62) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-08-23 14:52:32,702 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 62) HHH000431: Unable to determine H2 database version, certain features may not work
+2021-08-23 14:52:32,735 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 62) Envers integration enabled? : true
+2021-08-23 14:52:33,096 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 62) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2021-08-23 14:52:33,143 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 62) HV000001: Hibernate Validator 6.0.20.Final
+2021-08-23 14:52:33,929 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 62) HHH000397: Using ASTQueryTranslatorFactory
+2021-08-23 14:52:34,471 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,473 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,473 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,473 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002205: Adding provider class org.keycloak.services.error.KeycloakErrorHandler from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,474 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakSecurityHeadersFilter from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,474 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,475 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,475 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,475 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,475 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 62) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2021-08-23 14:52:34,560 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 62) WFLYUT0021: Registered web context: '/auth' for server 'default-server'

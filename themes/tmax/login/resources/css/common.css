@@ -223,14 +223,11 @@ input[type="checkbox"] {
   height: 1px;
   visibility: hidden;
 }
-label[for=rememberMe]{
-margin-left: 6px;
-}
 
 input[type="checkbox"] + label {
   display: inline-block;
   position: relative;
-  padding-left:  20px;
+  padding-left:20px;
   height: 20px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -250,17 +247,6 @@ input[type="checkbox"] + label:hover {
   background: url("../img/control_check_hover.svg") no-repeat;
   background-size: 13px 13px;
   background-position: 0 50%;
-}
-
-input[type="checkbox"] + label {
-  display: inline-block;
-  content: "";
-  background: url("../img/control_check_off.svg") no-repeat;
-  background-size: 13px 13px;
-  margin: 0 8px -1px 0;
-
-  height: 13px;
-
 }
 
 input[type="checkbox"]:checked + label {

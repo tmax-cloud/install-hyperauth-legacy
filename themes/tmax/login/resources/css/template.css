@@ -123,6 +123,9 @@
 
 .header-icon.login_reset_password {
   margin: 40px auto 0px auto;
+  font-size: 28px;
+color: #000000;
+letter-spacing: 1px;
 }
 
 .header-icon.register {
@@ -138,14 +141,14 @@
 
 .template-body .login-pf-page #kc-content-wrapper .header-icon {
   width: 100%;
-  line-height: unset;
-  margin: 40px 0 45px 0;
+  margin: 50px 0 45px 0;
   height: 47px;
   line-height: 47px;
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 500;
   font-family: "Noto Sans KR";
-  color: #042a54;
+  color: #000000;
+  letter-spacing: 1px;
   text-align: center;
 }
 
@@ -238,13 +241,11 @@ hr {
 #step1 label {
   font-size: 14px;
   color: #3e3e3e;
-  line-height: 2rem;
+  
   display: block;
-  padding-left: 21px;
-  text-indent: -21px;
+  padding-left: 25px;
   font-weight: 500;
 }
-
 #step1 label span {
   color: #ff4646;
   margin-left: 6px;
@@ -455,8 +456,10 @@ Register - User Information
   padding: 17px;
   max-width: 554px;
   height: 594px;
-  border: 1px solid #b9b9b9;
-  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #EEF2F7;
+  box-shadow: 10px 16px 18px 1px rgba(195,203,213,0.40);
+  border-radius: 24px;
 }
 
 .template-body.register-body .login-pf-page .card-pf {
@@ -464,14 +467,16 @@ Register - User Information
 }
 
 .template-body.register-body .login-pf-page .card-pf {
+  background: #ffffff;
+  border: 1px solid #EEF2F7;
+  box-shadow: 10px 16px 18px 1px rgba(195,203,213,0.40);
+  border-radius: 24px;
+
   margin-bottom: 50px;
   min-height: 750px;
   overflow-x: hidden;
   overflow-y: auto;
-  border: 1px solid #cccccc;
-  border-radius: 6px;
   max-width: 620px;
-  border-bottom: 8px solid #042a54;
 }
 
 #navigation-bar {
@@ -523,7 +528,7 @@ Register - User Information
   font-size: 16px;
   line-height: 24px;
   padding-top: 0px;
-  color: #666666;
+  color: #333333;
 }
 
 .login_reset_password .form-group .control-label {
@@ -838,9 +843,24 @@ div.form-group .form-control.has-error::placeholder {
 }
 
 .template-body .btn-primary[disabled] {
-  color: #ffffff !important;
-  background: #cccccc !important;
+  font-size: 18px;
+  box-shadow: none;
+ color: #AAAAAA !important;
+  background: #eeeeee !important;
+  border:none;
+  border-radius: 12px;
 }
+.template-body #withdrawal-cancel-button-wraper .btn-primary {
+  background: #FFFFFF;
+  height: 50px;
+  /* border: 1px solid #EFF0F1; */
+  box-shadow: 2px 3px 8px 2px rgba(105,116,128,0.10);
+  border-radius: 12px;
+
+  font-size: 18px;
+
+color: #243352;
+  }
 
 .template-body input[readonly] {
   background: #e4e4e4;
@@ -1168,20 +1188,34 @@ div.form-group .form-control.has-error::placeholder {
   margin-bottom: 4px;
   font-size: 16px;
 }
+#withdrawal-cancel #script-wraper{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom:90px ;
+}
 
 #withdrawal-cancel #deletionDate {
+ 
+  width: 290px;
+ display: inline-block;
+  height: 42px;
+  background: #F0F2F4;
+  border: 1px solid rgba(252,102,78,0.03);
+  border-radius: 24px;
   font-size: 16px;
-  color: #0066cc;
+  color: #2D2E30;
   letter-spacing: 0;
   text-align: center;
   line-height: 24px;
-  font-weight: 700;
+  font-weight: 500;
+  padding-top:8px;
 }
 
 #withdrawal-cancel #instruction {
   font-family: "Noto Sans KR";
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   font-size: 16px;
   color: #666666;
   letter-spacing: 0;
@@ -1216,8 +1250,8 @@ div.form-group .form-control.has-error::placeholder {
   padding: 13px 20px 20px 20px;
   background: #ffffff;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border-radius: 2px;
+  border-radius: 12px;
+ 
 }
 
 #withdrawal-cancel .modal .md_content .md_content__header {
@@ -1250,7 +1284,7 @@ div.form-group .form-control.has-error::placeholder {
 
 #withdrawal-cancel .modal .md_content hr {
   margin: 13px 0 20px 0;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid  #242E3C;
 }
 
 #withdrawal-cancel .modal .md_content .md_content__text {
@@ -1259,10 +1293,12 @@ div.form-group .form-control.has-error::placeholder {
   color: #333333;
   letter-spacing: 0;
   line-height: 24px;
+  height: 48px;
 }
 
 #withdrawal-cancel .modal .md_content .md_content__button {
   text-align: end;
+ 
 }
 
 #withdrawal-cancel .modal .md_content .button {
@@ -1278,6 +1314,8 @@ div.form-group .form-control.has-error::placeholder {
   line-height: 31px;
   display: inline-block;
   cursor: pointer;
+  box-shadow: 1px 2px 5px 1px rgba(64,71,78,0.10);
+  border-radius: 4px;
 }
 
 #withdrawal-cancel .modal .md_content .button:hover {

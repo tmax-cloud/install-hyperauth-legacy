@@ -8,16 +8,20 @@
          <div id="withdrawal-cancel">
             <form id="withdrawal-cancel-form" onsubmit="return false;" action="${url.loginAction}" method="post">
                 <div class="${properties.kcFormGroupClass!}">
-                    <p id="deletionDate">
+                <div id = "script-wraper">
+                    <div id="deletionDate">
                         ${msg("withdrawalDeletionDate")}${(deletionDate!'')}
-                    </p>
+                    </div>
                     <p id="instruction" >
                         ${msg("withdrawalMessage1")?no_esc}
                     </p>
                 </div>
+                </div>
                 <div class="${properties.kcFormGroupClass!}">
+                <div id="withdrawal-cancel-button-wraper">
                     <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!} padding-horizontal">
                         <button class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!}" id="withdrawal_cancel_button" onclick="openModal()">${msg("withdrawalCancel")}</button>
+                    </div>
                     </div>
                 </div>
                 <div class="modal hidden">

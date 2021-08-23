@@ -186,7 +186,7 @@
 }
 
 .login-body .empty-error {
-  height: 26px;
+  display: none;
 }
 
 .login-body .kc-option-wrapper {
