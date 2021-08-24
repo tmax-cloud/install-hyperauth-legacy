@@ -1432,3 +1432,8 @@ hr {
 #account-update #userDelete{
   margin-left: 168px;
 }
+
+.upload-picture{
+  padding: 0px 5px;
+  margin-top: 5px;
+}

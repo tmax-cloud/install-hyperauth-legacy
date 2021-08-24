@@ -530,8 +530,14 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
             var fd = new FormData();
             fd.append('imageFile', image)
             fd.append('imageName', image.name)
-            $http.post(authUrl + '/realms/' + realm.realm + '/picture/' + $scope.user.username,
-            fd, {
+            var pictureUrl = "";
+            if ($scope.user.username != null) {
+                pictureUrl = authUrl + '/realms/' + realm.realm + '/picture/' + $scope.user.username;
+            } else {
+                pictureUrl = authUrl + '/realms/' + realm.realm + '/picture/' + $scope.user.email;
+            }
+            
+            $http.post(pictureUrl, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
             }).then(function () {
@@ -580,7 +586,7 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
         delete $scope.user.attributes[key];
     }
 
-    let image = null;
+    var image = null;
     $scope.importFile = function () {
         image = document.getElementById('profilePicture').files[0];
         console.log(image.name);
@@ -599,7 +605,7 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
             //     console.log(reader.result);
             //     document.getElementById("target-tag").src = reader.result;
             // }
-            
+
         } catch (e) {
             console.error(e);
             return;
@@ -630,8 +636,8 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
     }
 
     var picture = null;
-    getPicture()
-    function getPicture() {
+    getPrevUserPicture()
+    function getPrevUserPicture() {
         try {
             $http.get(authUrl + '/realms/' + realm.realm + '/picture/' + $scope.user.username
             ).then(function onSuccess(response) {

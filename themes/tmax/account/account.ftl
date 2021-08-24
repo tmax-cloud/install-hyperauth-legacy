@@ -33,12 +33,12 @@
 
 
             <@layout.formGroup key="picture" required=false formGroupClass="${messagesPerField.printIfExists('picture','has-error')}">
- 				<label for="profilePicture" class="btn-default">${msg("uploadPicture")}</label>
+ 				<label for="profilePicture" class="btn-default upload-picture">${msg("uploadPicture")}</label>
 				<input id="profilePicture" type="file" class="hidden"/>
             </@layout.formGroup>
             
             <img id="picture" style="height:200px; margin-top:20px; display: none"/>
-            <button id="userDelete" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!}" onclick="deleteImageFileCheck(); return false;">${msg("deleteImage")}</button>
+            <button id="userDelete" class="${properties.kcButtonDefaultClass!}" onclick="deleteImageFileCheck(); return false;">${msg("deleteImage")}</button>
             
 
 

@@ -4,8 +4,8 @@ const realmName = document.getElementById("realmName").dataset.value;
 const getAccessToken = function () {
   return sessionStorage.getItem("accessToken");
 };
-var pictureImporting = false;
-var pictureDeleting = false;
+let pictureImporting = false;
+let pictureDeleting = false;
 
 
 const validationStates = {
@@ -447,21 +447,30 @@ function clickEye(e) {
 }
 
 const elImage = document.querySelector("#profilePicture");
+let importPicture = "";
 elImage.addEventListener("change", (evt) => {
-  const picture = evt.target.files[0];
-  console.log(picture)
-  chk(picture.name);
+  importPicture = evt.target.files[0];
+  // console.log(picture)
+  chk(importPicture.name);
+
+  document.getElementById("picture").src = window.URL.createObjectURL(importPicture);
+  document.getElementById("picture").style.display = "block";
+  pictureImporting = true;
+  document.getElementById("account-save-button").disabled = false;
+  document.getElementById("userDelete").style.display="block";
+
   console.log('image file get');
-  var reader = new FileReader();
-  reader.readAsDataURL(picture);
-  reader.onload = function () {
-      // console.log(reader.result);
-      document.getElementById("picture").src = reader.result;
-      document.getElementById("picture").style.display = "block";
-      pictureImporting = true;
-      document.getElementById("account-save-button").disabled = false;
-      document.getElementById("userDelete").style.display="block";
-  }
+
+  // let reader = new FileReader();
+  // reader.readAsDataURL(picture);
+  // reader.onload = function () {
+  //     // console.log(reader.result);
+  //     document.getElementById("picture").src = reader.result;
+  //     document.getElementById("picture").style.display = "block";
+  //     pictureImporting = true;
+  //     document.getElementById("account-save-button").disabled = false;
+  //     document.getElementById("userDelete").style.display="block";
+  // }
 
 });
 
@@ -481,8 +490,8 @@ function getPrevUserPicture() {
       `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email
     ).then((response) => {
       console.log(response);
-      var prevPicture = response.data.base64EncodeImage;
-      if (prevPicture != null){
+      let prevPicture = response.data.imagePath;
+      if (prevPicture != null && prevPicture.length > 0){
         document.getElementById("picture").style.display="block";
         document.getElementById("picture").src = prevPicture;
         pictureImporting = true;
@@ -520,9 +529,12 @@ function deleteImageFile(){
 function ImportImageFile(){
   try {
     const email =  document.getElementById("email").value;
-    data = { 'userName': email, 'base64EncodeImage': document.getElementById("picture").src };
+    let fd = new FormData();
+    fd.append('imageFile', importPicture)
+    fd.append('imageName', importPicture.name)
+    // data = { 'userName': email, 'base64EncodeImage': document.getElementById("picture").src };
     axios.post(
-      `${serverUrl}/auth/realms/`+ realmName + `/picture`, data
+      `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email, fd
     ).then((response) => {
       console.log(response);
     });
@@ -530,5 +542,3 @@ function ImportImageFile(){
     console.error(e);   
   }
 }
-
-
