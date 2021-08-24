@@ -16,6 +16,7 @@
 
 /* btn_line_gray */
 .btn-default {
+  cursor: pointer;
   background: #ffffff;
   border: 1px solid #042A54;
   color: #042A54;

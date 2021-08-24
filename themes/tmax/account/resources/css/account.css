@@ -1421,3 +1421,14 @@ hr {
 #withdrawal-submit-button:disabled {
   cursor: not-allowed;
 }
+
+
+/* ===========================account 회원 정보=================================== */
+#account-update #picture{
+ margin: 20px 0 20px 168px;
+ height: 200px;
+ max-width: 300px;
+}
+#account-update #userDelete{
+  margin-left: 168px;
+}
