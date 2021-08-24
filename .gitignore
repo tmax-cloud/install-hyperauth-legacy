@@ -2,3 +2,4 @@ standalone/log/
 standalone/tmp/
 standalone/data/
 standalone/configuration/standalone_xml_history/
+standalone/deployments/*.deployed
