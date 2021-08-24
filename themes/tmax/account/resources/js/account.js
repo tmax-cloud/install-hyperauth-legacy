@@ -501,6 +501,7 @@ function deleteImageFileCheck(){
   document.getElementById("picture").style.display="none";
   document.getElementById("userDelete").style.display="none";
   pictureDeleting = true;
+  document.getElementById("account-save-button").disabled = false;
 }
 
 function deleteImageFile(){

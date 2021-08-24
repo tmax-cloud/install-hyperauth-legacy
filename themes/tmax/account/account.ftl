@@ -27,14 +27,24 @@
                 <input type="text" class="form-control" id="userNameAttr" name="userNameAttr" autofocus value="${(account.userNameAttr!'')}" onkeyup="buttonAbled(); return false" maxlength="50"/>
             </@layout.formGroup>
 
+
+
+
+
+
             <@layout.formGroup key="picture" required=false formGroupClass="${messagesPerField.printIfExists('picture','has-error')}">
  				<label for="profilePicture" class="btn-default">${msg("uploadPicture")}</label>
 				<input id="profilePicture" type="file" class="hidden"/>
             </@layout.formGroup>
             
             <img id="picture" style="height:200px; margin-top:20px; display: none"/>
-            <button class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!}" onclick="deleteImageFileCheck(); return false;">${msg("deleteImage")}</button>
+            <button id="userDelete" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!}" onclick="deleteImageFileCheck(); return false;">${msg("deleteImage")}</button>
             
+
+
+
+
+
             <div class="${properties.kcInputWrapperClass!} error_message" id="error_username_empty" style="display: none">
                 ${msg("MSG_ERROR_USERNAME_1")}
             </div>
