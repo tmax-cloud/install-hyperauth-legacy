@@ -1,3 +1,4 @@
+
 module.controller('UserRoleMappingCtrl', function ($scope, $http, $route, realm, user, client, Client, Notifications, RealmRoleMapping,
     ClientRoleMapping, AvailableRealmRoleMapping, AvailableClientRoleMapping,
     CompositeRealmRoleMapping, CompositeClientRoleMapping, $translate) {
@@ -513,19 +514,30 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
         }
 
         if ($scope.importing) {
-            var data = null;
-            if ($scope.user.username != null) {
-                data = { 'userName': $scope.user.username, 'base64EncodeImage': document.getElementById("target-tag").src };
-            } else {
-                data = { 'userName': $scope.user.email, 'base64EncodeImage': document.getElementById("target-tag").src };
-            }
-            // console.log(data);
 
-            $http.post(authUrl + '/realms/' + realm.realm + '/picture',
-                data).then(function () {
-                    console.log("image save success")
-                    $scope.instancesLoaded = true;
-                });
+            // var data = null;
+            // if ($scope.user.username != null) {
+            //     data = { 'userName': $scope.user.username, 'base64EncodeImage': document.getElementById("target-tag").src };
+            // } else {
+            //     data = { 'userName': $scope.user.email, 'base64EncodeImage': document.getElementById("target-tag").src };
+            // }
+            // $http.post(authUrl + '/realms/' + realm.realm + '/picture/' + $scope.user.username,
+            //     image).then(function () {
+            //         console.log("image save success")
+            //         $scope.instancesLoaded = true;
+            //     });
+
+            var fd = new FormData();
+            fd.append('imageFile', image)
+            fd.append('imageName', image.name)
+            $http.post(authUrl + '/realms/' + realm.realm + '/picture/' + $scope.user.username,
+            fd, {
+                transformRequest: angular.identity,
+                headers: {'Content-Type': undefined}
+            }).then(function () {
+                console.log("image save success")
+                $scope.instancesLoaded = true;
+            });    
             $scope.importing = false;
         }
     };
@@ -568,18 +580,26 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
         delete $scope.user.attributes[key];
     }
 
-
+    let image = null;
     $scope.importFile = function () {
-        var image = document.getElementById('profilePicture').files[0];
+        image = document.getElementById('profilePicture').files[0];
         console.log(image.name);
         try {
             chk(image.name);
-            var reader = new FileReader();
-            reader.readAsDataURL(image);
-            reader.onload = function () {
-                console.log(reader.result);
-                document.getElementById("target-tag").src = reader.result;
+            console.log(image)
+
+            document.getElementById("target-tag").src = window.URL.createObjectURL(image)
+            document.getElementById("target-tag").onload = () => { 
+                window.URL.revokeObjectURL(this.src) 
             }
+
+            // var reader = new FileReader();
+            // reader.readAsDataURL(image);
+            // reader.onload = function () {
+            //     console.log(reader.result);
+            //     document.getElementById("target-tag").src = reader.result;
+            // }
+            
         } catch (e) {
             console.error(e);
             return;
@@ -615,7 +635,7 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
         try {
             $http.get(authUrl + '/realms/' + realm.realm + '/picture/' + $scope.user.username
             ).then(function onSuccess(response) {
-                picture = response.data.base64EncodeImage;
+                picture = response.data.imagePath;
                 // console.log(picture);
                 if (picture != null && picture.length > 0) {
                     $scope.instancesLoaded = true;
@@ -631,6 +651,7 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
 
 
 });
+
 
 module.controller('UserCredentialsCtrl', function ($scope, realm, user, $route, $location, RequiredActions, User, UserExecuteActionsEmail,
     UserCredentials, Notifications, Dialog, TimeUnit2, Components, UserStorageOperations, $modal, $translate) {
