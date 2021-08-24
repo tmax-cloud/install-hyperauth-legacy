@@ -74,7 +74,7 @@
                 <li class="<#if active=='additionalAuth'>active</#if>"><a href="${(url.additionalAuthUrl!'')}"><p id="addtionalAuth_icon"></p><p class="title">${msg("additionalAuth")}</p></a></li>
                 <!--<li class="<#if active=='totp'>active</#if>"><a href="${(url.totpUrl!'')}"><p id="totp_icon"></p><p class="title">${msg("authenticator")}</p></a></li>-->
                 <!--<#if features.identityFederation><li class="<#if active=='social'>active</#if>"><a href="${url.socialUrl}"><p id="social_icon"></p><p class="title">${msg("federatedIdentity")}</p></a></li></#if>-->
-                <#if features.identityFederation><li class="<#if active=='social'>active</#if>"><a href="${(url.socialUrl!'')}"><p id="social_icon"></p><p class="title">${msg("federatedIdentity")}</p></a></li></#if>
+                <li class="<#if active=='social'>active</#if>"><a href="${(url.socialUrl!'')}"><p id="social_icon"></p><p class="title">${msg("federatedIdentity")}</p></a></li>
                 <li id="agreement_tab" class="<#if active=='agreement'>active</#if>"><a href="${(url.agreementUrl!'')}"><p id="aggrement_icon"></p><p class="title">${msg("agreement")}</p></a></li>
                 <li class="<#if active=='sessions'>active</#if>"><a href="${url.sessionsUrl}"><p id="sessions_icon"></p><p class="title">${msg("sessions")}</p></a></li>
 <#--                <li class="<#if active=='applications'>active</#if>"><a href="${url.applicationsUrl}"><p class="title">${msg("applications")}</p></a></li>-->

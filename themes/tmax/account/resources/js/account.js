@@ -1,8 +1,12 @@
 const serverUrl = document.location.origin;
 const MAX_NAME_LANGTH = 50;
+const realmName = document.getElementById("realmName").dataset.value;
 const getAccessToken = function () {
   return sessionStorage.getItem("accessToken");
 };
+var pictureImporting = false;
+var pictureDeleting = false;
+
 
 const validationStates = {
   email: false,
@@ -213,6 +217,15 @@ function closeCancelModal() {
 }
 
 function changeName() {
+
+  if (pictureDeleting){
+    deleteImageFile();
+    pictureDeleting = false;
+  }else if (pictureImporting){
+    ImportImageFile();
+    pictureImporting = false;
+  }
+
   const saveForm = document.getElementById("account-update-form");
 
   const email = document.createElement("input");
@@ -304,7 +317,7 @@ async function submitWithdrawal() {
 
       const params = new URLSearchParams();
       params.append("password", password);
-      let passwordUrl = `${serverUrl}/auth/realms/tmax/password`;
+      let passwordUrl = `${serverUrl}/auth/realms/` + realmName + `/password`;
 
       const passwordResp = await axios.patch(passwordUrl, params, {
         params: {
@@ -411,7 +424,7 @@ async function getTerm(company) {
     const term = document.getElementById(company);
     const version = term.classList.contains("en") ? "latest_en" : "latest_ko";
     const resp = await axios.get(
-      `${serverUrl}/auth/realms/tmax/agreement/${company}?version=${version}&realmName=tmax`
+      `${serverUrl}/auth/realms/`+ realmName + `/agreement/${company}?version=${version}&realmName=` + realmName
     );
     term.innerHTML = resp.data;
   } catch (e) {
@@ -432,3 +445,89 @@ function clickEye(e) {
     }
   }
 }
+
+const elImage = document.querySelector("#profilePicture");
+elImage.addEventListener("change", (evt) => {
+  const picture = evt.target.files[0];
+  console.log(picture)
+  chk(picture.name);
+  console.log('image file get');
+  var reader = new FileReader();
+  reader.readAsDataURL(picture);
+  reader.onload = function () {
+      // console.log(reader.result);
+      document.getElementById("picture").src = reader.result;
+      document.getElementById("picture").style.display = "block";
+      pictureImporting = true;
+      document.getElementById("account-save-button").disabled = false;
+      document.getElementById("userDelete").style.display="block";
+  }
+
+});
+
+function chk(obj) {
+  if (/(\.gif|\.jpg|\.jpeg|\.png|\.svg)$/i.test(obj) == false) {
+    throw new Error('Unable to parse IMG file.');
+  }
+  return;
+}
+
+getPrevUserPicture()
+
+function getPrevUserPicture() {
+  try {
+    const email =  document.getElementById("email").value;
+    axios.get(
+      `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email
+    ).then((response) => {
+      console.log(response);
+      var prevPicture = response.data.base64EncodeImage;
+      if (prevPicture != null){
+        document.getElementById("picture").style.display="block";
+        document.getElementById("picture").src = prevPicture;
+        pictureImporting = true;
+        document.getElementById("userDelete").style.display="block";
+      } else {
+        document.getElementById("picture").style.display="none";
+        document.getElementById("userDelete").style.display="none";
+      }
+    });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+function deleteImageFileCheck(){
+  document.getElementById("picture").style.display="none";
+  document.getElementById("userDelete").style.display="none";
+  pictureDeleting = true;
+}
+
+function deleteImageFile(){
+  try {
+    const email =  document.getElementById("email").value;
+    axios.delete(
+      `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email
+    ).then((response) => {
+      console.log(response);
+    });
+  } catch (e) {
+    console.error(e);   
+  }
+}
+
+function ImportImageFile(){
+  try {
+    const email =  document.getElementById("email").value;
+    data = { 'userName': email, 'base64EncodeImage': document.getElementById("picture").src };
+    axios.post(
+      `${serverUrl}/auth/realms/`+ realmName + `/picture`, data
+    ).then((response) => {
+      console.log(response);
+    });
+  } catch (e) {
+    console.error(e);   
+  }
+}
+
+
