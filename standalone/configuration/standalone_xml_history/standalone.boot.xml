@@ -150,22 +150,13 @@
                 <datasource jndi-name="java:jboss/datasources/KeycloakDS" pool-name="KeycloakDS" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
                     <connection-url>jdbc:h2:${jboss.server.data.dir}/keycloak;AUTO_SERVER=TRUE</connection-url>
                     <driver>h2</driver>
-<<<<<<< HEAD
-=======
                     <pool>
                         <max-pool-size>100</max-pool-size>
                     </pool>
->>>>>>> 8be8b3e519494495243a9ecd8ce9c794bbb516a3
                     <security>
                         <user-name>sa</user-name>
                         <password>sa</password>
                     </security>
-<<<<<<< HEAD
-                    <pool>
-                        <max-pool-size>100</max-pool-size>
-                    </pool>
-=======
->>>>>>> 8be8b3e519494495243a9ecd8ce9c794bbb516a3
                 </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
