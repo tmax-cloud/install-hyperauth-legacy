@@ -644,8 +644,9 @@ module.controller('UserDetailCtrl', function ($scope, realm, user, BruteForceUse
                 picture = response.data.imagePath;
                 // console.log(picture);
                 if (picture != null && picture.length > 0) {
+                    console.log()
                     $scope.instancesLoaded = true;
-                    document.getElementById("target-tag").src = picture;
+                    document.getElementById("target-tag").src = authUrl.slice(0,-4) + picture;
                 }
             }).catch(function onError(error) {
                 console.log(error);

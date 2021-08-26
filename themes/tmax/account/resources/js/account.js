@@ -493,7 +493,7 @@ function getPrevUserPicture() {
       let prevPicture = response.data.imagePath;
       if (prevPicture != null && prevPicture.length > 0){
         document.getElementById("picture").style.display="block";
-        document.getElementById("picture").src = prevPicture;
+        document.getElementById("picture").src = `${serverUrl}/` + prevPicture;
         pictureImporting = true;
         document.getElementById("userDelete").style.display="block";
       } else {
