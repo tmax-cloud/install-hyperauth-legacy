@@ -34,7 +34,7 @@
 
             <@layout.formGroup key="picture" required=false formGroupClass="${messagesPerField.printIfExists('picture','has-error')}">
  				<label for="profilePicture" class="btn-default upload-picture">${msg("uploadPicture")}</label>
-				<input id="profilePicture" type="file" class="hidden"/>
+				<input id="profilePicture" type="file" class="hidden" accept=".jpg, .jpeg, .png, .bmp, .gif"/>
             </@layout.formGroup>
             
             <img id="picture" style="height:200px; margin-top:20px; display: none"/>

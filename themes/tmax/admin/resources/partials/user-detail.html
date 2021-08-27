@@ -135,7 +135,7 @@
 				<div class="col-md-6">
 					<div data-ng-hide="importing">
 						<label for="profilePicture" class="btn btn-default">{{:: 'select-file'| translate}} <i class="pficon pficon-import"></i></label>
-						<input id="profilePicture" type="file" class="hidden" kc-on-read-file="importFile()"/>
+						<input id="profilePicture" type="file" class="hidden" accept=".jpg, .jpeg, .png, .bmp, .gif" kc-on-read-file="importFile()"/>
 					</div>
 					<div data-ng-show="importing">
 						<button class="btn btn-default" data-ng-click="reset()">{{:: 'clear-import'| translate}}</button>
