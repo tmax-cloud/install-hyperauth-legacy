@@ -625,6 +625,7 @@ Register - User Information
   height: 16px;
   background-image: url("../img/close.svg");
   cursor: pointer;
+  background-size: cover;
 }
 
 #verify_password .modal .md_content hr {
@@ -1062,10 +1063,11 @@ color: #243352;
 }
 
 #email-sent .modal .md_content .md_content__header .md_content__header__close {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   background-image: url("../img/close.svg");
   cursor: pointer;
+  background-size: cover;
 }
 
 #email-sent .modal .md_content hr {
@@ -1106,7 +1108,7 @@ color: #243352;
 }
 
 #opt-code .infoText {
-  margin-top: 10px;
+  margin-top: 20px;
   padding-left: 10px;
 }
 
@@ -1144,9 +1146,9 @@ color: #333333;
 
 #ip-blocked #instruction {
   font-family: "Noto Sans KR";
-  margin-top: 50px;
+  margin: 50px 0 267px 0;
   font-size: 16px;
-  color: #666666;
+  color: #333333;
   letter-spacing: 0;
   text-align: center;
   line-height: 24px;
@@ -1289,10 +1291,11 @@ color: #333333;
   .md_content
   .md_content__header
   .md_content__header__close {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   background-image: url("../img/close.svg");
   cursor: pointer;
+  background-size: cover;
 }
 
 #withdrawal-cancel .modal .md_content hr {

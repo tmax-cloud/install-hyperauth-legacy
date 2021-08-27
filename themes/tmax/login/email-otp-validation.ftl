@@ -39,7 +39,7 @@
                     </div>
                     <div class="${properties.kcFormGroupClass!}">
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                            <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" id="login-otp" type="submit" disabled />
+                            <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" id="login-otp" type="submit" value ="${msg("otpCodeConfirm")}" disabled />
                         </div>
                         <div id="kc-info-message" class="${properties.kcLabelWrapperClass!} infoText">
                             <#--  현재 페이지 새로고침할 때 메일 재전송 되고있어서 임시방안으로 새로고침을 통한 재전송으로 구현해놓음  -->
