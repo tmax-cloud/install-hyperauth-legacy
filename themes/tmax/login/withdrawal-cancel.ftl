@@ -13,7 +13,8 @@
                         ${msg("withdrawalDeletionDate")}${(deletionDate!'')}
                     </div>
                     <p id="instruction" >
-                        ${msg("withdrawalMessage1")?no_esc}
+                        ${msg("withdrawalMessage1")?no_esc}<span style='color: #000000;font-weight:500;'> ${msg("withdrawalMessage2")}</span>
+                        ${msg("withdrawalMessage3")?no_esc}
                     </p>
                 </div>
                 </div>
