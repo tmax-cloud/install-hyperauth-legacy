@@ -24,7 +24,7 @@
                         </div>
                         <div class="${properties.kcInputWrapperClass!} marginBottom" style="min-height: 100px;">
                             <div id="timer-input-container" class="timer-input-container">
-                                <input type="text" id="otpCode" name="otpCode" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus onkeyup="removeError(this)" onchange="removeError(this)" onpaste="removeError(this)"/>
+                                <input type="text" id="otpCode" name="otpCode" placeholder="${msg("otpCodePlacehold")}" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus onkeyup="removeError(this)" onchange="removeError(this)" onpaste="removeError(this)"/>
                             </div>
                             <div>
                                 <#if message?has_content && (message.type != 'warning')>

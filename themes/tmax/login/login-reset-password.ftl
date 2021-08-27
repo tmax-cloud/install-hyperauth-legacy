@@ -177,7 +177,8 @@
                 </div>
                 <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
                     ${msg("MSG_RESETPASSWORD_SUCCEED_2_2")}
-                    <span style = 'color:#0F1727; font-weight:500;margin:0;'> ${msg("MSG_RESETPASSWORD_SUCCEED_2_3")}</span>${msg("MSG_RESETPASSWORD_SUCCEED_2_4")}
+                    <span style = 'color:#0F1727; font-weight:500;margin:0;'> ${msg("MSG_RESETPASSWORD_SUCCEED_2_3")}</span>
+                    ${msg("MSG_RESETPASSWORD_SUCCEED_2_4")}
                 </div>
             </div>
             <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
