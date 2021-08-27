@@ -475,7 +475,7 @@ elImage.addEventListener("change", (evt) => {
 });
 
 function chk(obj) {
-  if (/(\.gif|\.jpg|\.jpeg|\.png|\.svg)$/i.test(obj) == false) {
+  if (/(\.gif|\.jpg|\.jpeg|\.png|\.bmp)$/i.test(obj) == false) {
     throw new Error('Unable to parse IMG file.');
   }
   return;
