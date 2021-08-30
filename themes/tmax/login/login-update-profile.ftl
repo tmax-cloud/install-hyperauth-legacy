@@ -69,9 +69,12 @@
                     </span>
                     <span id="instruction" >
                         ${msg("MSG_LINKACCOUNT_NONMEMBER_1")?no_esc}
-                        ${msg("MSG_LINKACCOUNT_NONMEMBER_2")?no_esc}
                     </span>
-                    <p id="instruction2">
+                    <div id = 'instruction2'>
+                        ${msg("MSG_LINKACCOUNT_NONMEMBER_2")?no_esc}
+                    </div>
+                    
+                    <p id="instruction3">
                         ${msg("MSG_LINKACCOUNT_NONMEMBER_3")?no_esc}
                     </p>
                 </div>
