@@ -55,13 +55,18 @@
                     <#else>
                         <div class="welcome-img"></div>
                     </#if>
-                    <p id="welcome-instruction">
-                        ${msg("finishIdpUserVerificationMessage1", identityProviderVendor, hyperauthUserName)?no_esc}
-                        ${msg("finishIdpUserVerificationMessage2", identityProviderVendor, identityProviderUserName)?no_esc}
-                    </p>
+                    <div id="welcome-instruction">
+                        ${msg("finishIdpUserVerificationMessage1")}
+                        <span id = 'connect-complete-span'> ${msg("finishIdpUserVerificationMessage1_2")}</span>
+                         ${msg("finishIdpUserVerificationMessage1_3", identityProviderVendor, hyperauthUserName)?no_esc}
+
+                       <span  id = 'connect-info-span'> ${msg("finishIdpUserVerificationMessage2", identityProviderVendor, identityProviderUserName)?no_esc}</span>
+                    </div>
                 </div>
                 <div class="${properties.kcFormGroupClass!}">
-                    <button class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!}" style="margin-top: 70px;" <#if actionUri?has_content && (client.baseUrl)?has_content>onclick="finishIdpSuccess('${client.baseUrl}', '${actionUri}')"</#if>>${msg("finishIdpUserVerificationButton")}</button>
+                    <div id = 'connent-complete-bt'>
+                    <button class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!}" <#if actionUri?has_content && (client.baseUrl)?has_content>onclick="finishIdpSuccess('${client.baseUrl}', '${actionUri}')"</#if>>${msg("finishIdpUserVerificationButton")}</button>
+                    </div>
                 </div>
             </div>
         <#else>
