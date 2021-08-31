@@ -195,7 +195,7 @@ header .navbar {
 */
 .content-area {
   background-color: #ffffff;
-  padding: 20px 30px;
+  padding: 30px 24px;
   min-height: 100%;
   /* height: 100%; */
   border: none;
@@ -338,7 +338,7 @@ header .navbar {
 .content-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 @media (max-width: 767px) {
@@ -355,7 +355,7 @@ header .navbar {
 .content-header h2 {
   display: inline-block;
   margin: 0;
-  padding: 0 6px;
+  padding: 0 ;
   height: 30px;
   width: auto;
   font-size: 20px;
@@ -364,14 +364,19 @@ header .navbar {
   text-align: center;
   color: #000000;
 }
-
+.con
 .row h3 {
   margin: 0 0 10px 0;
   font-size: 16px;
   font-weight: bold;
   color: #000000;
 }
-
+#page-descript{
+  font-family: NotoSansCJKkr-Regular;
+  font-size: 16px;
+  color: #646A6A;
+  letter-spacing: 0;
+}
 .content-header .ic-required,
 .form-group .ic-required {
   display: inline-block;
@@ -684,11 +689,17 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-p {
+#usingCheckText {
   margin: 0px;
   display: inline-block;
-  font-size: 15px;
+  font-size: 14px;
+color: #646969;
   font-weight: bold;
+}
+#usingCheckText a{
+  margin-left: 4px;
+  font-size: 14px;
+color: #213557;
 }
 .rightMargin {
   margin-right: 50px;
@@ -718,8 +729,13 @@ p {
   background: url(../img/Illust_2ndconfirm.svg) no-repeat center center;
 }
 
-hr {
-  border-top: 1px solid #d3d3d3;
+#hr-top {
+  border-top: 3px solid #000000;
+  margin:30px 0;
+}
+#hr-bottom{
+  margin-top:30px;
+  border-top: 1px solid #D4D6D6;
 }
 
 /* by hyowook_park for modals */
@@ -1424,16 +1440,94 @@ hr {
 
 
 /* ===========================account 회원 정보=================================== */
-#account-update #picture{
+/* #account-update #picture{
  margin: 20px 0 20px 168px;
  height: 200px;
  max-width: 300px;
+} */
+#email{
+  font-size: 14px;
+color: #000000;
 }
-#account-update #userDelete{
-  margin-left: 168px;
+#account-update-form label{
+  font-size: 14px;
+  color: #000000;
 }
-
 .upload-picture{
   padding: 0px 5px;
   margin-top: 5px;
+}
+#account-update #userProfileImg-wrapper{
+display: inline-block;
+
+}
+#account-update #userProfileImg{
+  float: left;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-image:url('../img/profile_image.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+#account-update #userProfileImg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+
+}
+#userProfileImg-hover-box{
+  cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+top:70px;
+position: absolute;
+  height: 32px;
+background: rgba(0, 0, 0, 0.5);
+width: 100%;
+}
+#userProfileImg-hover-box:hover{
+  background: rgba(0, 0, 0, 0.7);
+}
+#userProfileImg-hover-box:active{
+  background: rgba(0, 0, 0, 0.9);
+}
+#ic-profileImg{
+  background-image:url('../img/camera.svg');
+  background-repeat: no-repeat;
+  background-size: inherit;
+  width: 20px;
+  height: 20px;
+
+
+}
+#userProfileImg-delete-button{
+  background: #FFFFFF;
+border: 1px solid #E7E7E7;
+border-radius: 12px;
+width: 20px;
+height: 20px;
+padding:5px 5px;
+margin:0;
+
+}
+#userProfileImg-delete-button div{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/close.svg');
+  width: 10px;
+  height: 10px;
+  margin:0;
+}
+
+#userProfileImg-delete-button:hover{
+  background: #F8F9FA;
+}
+#userProfileImg-delete-button:active{
+  background: #EFF1F3;
+  
 }

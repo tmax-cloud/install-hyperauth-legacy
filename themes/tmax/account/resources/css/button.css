@@ -18,8 +18,12 @@
 .btn-default {
   cursor: pointer;
   background: #ffffff;
-  border: 1px solid #042A54;
+
   color: #042A54;
+
+border: 1px solid #EFF0F1;
+box-shadow: 2px 3px 8px 2px rgba(105,116,128,0.10);
+border-radius: 10px;
 }
 
 .btn-default:hover {
@@ -56,6 +60,10 @@
 }
 
 .btn:disabled {
-  background: #CCCCCC !important;
-  color: #FFFFFF !important;
+  background: #EEEEEE!important;
+  border: 1px solid #E9E9E9;
+  border-radius: 10px;
+
+  font-size: 18px;
+color: #AAAAAA;
 }

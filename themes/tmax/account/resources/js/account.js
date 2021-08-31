@@ -456,8 +456,9 @@ elImage.addEventListener("change", (evt) => {
   document.getElementById("picture").src = window.URL.createObjectURL(importPicture);
   document.getElementById("picture").style.display = "block";
   pictureImporting = true;
+  pictureDeleting = false;
   document.getElementById("account-save-button").disabled = false;
-  document.getElementById("userDelete").style.display="block";
+  document.getElementById("userProfileImg-delete-button").style.display="block";
 
   console.log('image file get');
 
@@ -469,7 +470,7 @@ elImage.addEventListener("change", (evt) => {
   //     document.getElementById("picture").style.display = "block";
   //     pictureImporting = true;
   //     document.getElementById("account-save-button").disabled = false;
-  //     document.getElementById("userDelete").style.display="block";
+  //     document.getElementById("userProfileImg-delete-button").style.display="block";
   // }
 
 });
@@ -495,10 +496,10 @@ function getPrevUserPicture() {
         document.getElementById("picture").style.display="block";
         document.getElementById("picture").src = `${serverUrl}/` + prevPicture;
         pictureImporting = true;
-        document.getElementById("userDelete").style.display="block";
+        document.getElementById("userProfileImg-delete-button").style.display="block";
       } else {
         document.getElementById("picture").style.display="none";
-        document.getElementById("userDelete").style.display="none";
+        document.getElementById("userProfileImg-delete-button").style.display="none";
       }
     });
   } catch (e) {
@@ -508,7 +509,7 @@ function getPrevUserPicture() {
 
 function deleteImageFileCheck(){
   document.getElementById("picture").style.display="none";
-  document.getElementById("userDelete").style.display="none";
+  document.getElementById("userProfileImg-delete-button").style.display="none";
   pictureDeleting = true;
   document.getElementById("account-save-button").disabled = false;
 }

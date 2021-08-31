@@ -3,47 +3,51 @@
 
     <div id="account-update" class="">
         <div id="realmName" data-value="${realm.name}"></div>
+
         <@layout.contentHeader required=false; section>
             ${msg("editAccountHtmlTitle")}
         </@layout.contentHeader>
-        </br>
-        ${msg("editAccountHtmlBody")}
-        </br>
-        <hr>
+        <div id = 'page-descript'>${msg("editAccountHtmlBody")}</div>
+        <hr id='hr-top'>
+
         <input type="hidden" id="originName" name="originName" value="${(account.userNameAttr!'')}">        
         <form id="account-update-form" action="${url.accountUrl}" class="form-horizontal" method="post">
             <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
+            <@layout.formGroup key="picture" required=false formGroupClass="${messagesPerField.printIfExists('picture','has-error')}">
+				<input id="profilePicture" type="file" class="hidden" accept=".jpg, .jpeg, .png, .bmp, .gif"/>
+                <div id = 'userProfileImg-wrapper'>
+                    <div id = 'userProfileImg'>
+                        <img id="picture"/>
+                        <label for="profilePicture"> 
+                            <div id='userProfileImg-hover-box'>
+                                <div id = 'ic-profileImg'></div>
+                            </div>
+                        </label>
+                    </div>
+                    <button id= 'userProfileImg-delete-button' onclick="deleteImageFileCheck(); return false;"/>
+                        <div></div>
+                    </button>  
+                </div>
+          
+            </@layout.formGroup>
+
+            <@layout.formGroup key="email" required=false formGroupClass="${messagesPerField.printIfExists('email','has-error')}">
+            <div id="email">${(account.email!'')}</div>
+                <#--  <input type="text" class="form-control" id="email" name="email" value="${(account.email!'')}" disabled="disabled" />  -->
+            </@layout.formGroup>
             <#if !realm.registrationEmailAsUsername>
                 <@layout.formGroup key="username" required=false formGroupClass="${messagesPerField.printIfExists('username','has-error')}">
                     <input type="text" class="form-control" id="username" name="useruserNameAttrname" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
                 </@layout.formGroup>
             </#if>
 
-            <@layout.formGroup key="email" required=false formGroupClass="${messagesPerField.printIfExists('email','has-error')}">
-                <input type="text" class="form-control" id="email" name="email" value="${(account.email!'')}" disabled="disabled" />
-            </@layout.formGroup>
-
             <@layout.formGroup key="userNameAttr" required=false formGroupClass="${messagesPerField.printIfExists('userNameAttr','has-error')}">
                 <input type="text" class="form-control" id="userNameAttr" name="userNameAttr" autofocus value="${(account.userNameAttr!'')}" onkeyup="buttonAbled(); return false" maxlength="50"/>
             </@layout.formGroup>
 
 
-
-
-
-
-            <@layout.formGroup key="picture" required=false formGroupClass="${messagesPerField.printIfExists('picture','has-error')}">
- 				<label for="profilePicture" class="btn-default upload-picture">${msg("uploadPicture")}</label>
-				<input id="profilePicture" type="file" class="hidden" accept=".jpg, .jpeg, .png, .bmp, .gif"/>
-            </@layout.formGroup>
             
-            <img id="picture" style="height:200px; margin-top:20px; display: none"/>
-            <button id="userDelete" class="${properties.kcButtonDefaultClass!}" onclick="deleteImageFileCheck(); return false;">${msg("deleteImage")}</button>
-            
-
-
-
-
+        
 
             <div class="${properties.kcInputWrapperClass!} error_message" id="error_username_empty" style="display: none">
                 ${msg("MSG_ERROR_USERNAME_1")}
@@ -62,8 +66,8 @@
 <#--        <@layout.formGroup key="lastName" required=true formGroupClass="${messagesPerField.printIfExists('lastName','has-error')}">-->
 <#--            <input type="text" class="form-control" id="lastName" name="lastName" value="${(account.lastName!'')}"/>-->
 <#--        </@layout.formGroup>-->
-            <hr>            
-            <p id="">
+            <hr id='hr-bottom'>            
+            <p id="usingCheckText">
                 ${msg("withdrawalHtmlBody")}
                 <a href="#" onclick="openWithdrawalPage(); return false;">
                     ${msg("withdrawalAccount")}
