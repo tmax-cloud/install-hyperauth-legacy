@@ -230,6 +230,7 @@
                         <#list federatedIdentity.identities as identity>
                         <#--  <@layout.formGroup key="${identity.providerId!}" labelText="${identity.displayName!}">  -->
                         <#--<input disabled="true" class="form-control" value="${identity.userName!}">-->
+
                             <#if identity.connected>
                                     <#if password.passwordSet>
                                         <div class="boundaryBox">
@@ -243,6 +244,7 @@
                                     <#-- kakao api key를 hidden input으로 받는다.   -->
                                         <div class="snsBox kakao" onclick="loginWithKakao()">
                                             <input id="kakao-api-key" type="hidden" value="${(identity.kakaoJsKey!'')}">
+                                            <input id="kakao-username" type="hidden" value="${(identity.userName!'')}">
                                             <a id="custom-login-btn" href="javascript:loginWithKakao()">
                                                 <img
                                                         src="${url.resourcesPath}/img/btn_kakao_login.svg"

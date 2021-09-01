@@ -359,7 +359,7 @@ header .navbar {
   height: 30px;
   width: auto;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: bold;
   border-radius: 2px;
   text-align: center;
   color: #000000;
@@ -441,7 +441,12 @@ header .navbar {
 .form-horizontal .form-group {
   display: flex;
   position: relative;
+
   margin: 0 0 10px 0;
+}
+#password-form .form-group{
+  margin:0 0 30px 0;
+
 }
 
 @media (max-width: 767px) {
@@ -475,6 +480,7 @@ header .navbar {
 .form-horizontal .control {
   flex-grow: 1;
   display: flex;
+
 }
 
 .form-horizontal .control .form-control {
@@ -487,6 +493,10 @@ header .navbar {
   border: 1px solid #A6ABBB;
   border-radius: 8px;
 }
+/* #password-form .control input{
+  float: left;
+  position: absolute;
+} */
 
 .form-horizontal .control .form-control::placeholder {
   font-style: normal;
@@ -519,6 +529,9 @@ header .navbar {
   text-align: center;
   flex-wrap: wrap;
   margin: 20px 0 0 0;
+}
+#password-form .form-group.buttons{
+  margin: 50px 0 0 0;
 }
 
 #kc-form-buttons {
@@ -1320,6 +1333,7 @@ color: #213557;
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;
+  
   top: 0;
   bottom: 0;
   right: -1px;
