@@ -7,15 +7,35 @@ function loginWithKakao() {
   Kakao.Auth.login({
     success: function (authObj) {
       // alert(JSON.stringify(authObj))
-      alert("인증되었습니다.");
+      // alert(JSON.stringify(authObj));
+      console.log(JSON.stringify(authObj))
 
-      // 인증 완료 시, 탈퇴 신청 버튼에 vendor 값 넣어줌
-      document
-        .getElementById("withdrawal-submit-button")
-        .setAttribute("data-vendor", "kakao");
-      document
-        .getElementById("withdrawal-submit-button")
-        .removeAttribute("disabled");
+      Kakao.API.request({
+        url: '/v2/user/me',
+        data: {
+            property_keys: ["kakao_account.email"]
+        },
+        success: function(response) {
+            console.log(response);
+            if(response.kakao_account.email == document.getElementById("email").value){
+              alert("인증되었습니다.")
+              // 인증 완료 시, 탈퇴 신청 버튼에 vendor 값 넣어줌
+              document
+              .getElementById("withdrawal-submit-button")
+              .setAttribute("data-vendor", "kakao");
+              document
+              .getElementById("withdrawal-submit-button")
+              .removeAttribute("disabled");
+            } else {
+              alert("누구냐 너!!!.")
+            }
+        },
+        fail: function(error) {
+            console.log(error);
+        }
+    });
+
+      
     },
     fail: function (err) {
       alert(JSON.stringify(err));

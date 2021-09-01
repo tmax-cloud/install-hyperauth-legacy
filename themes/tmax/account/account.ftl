@@ -32,8 +32,8 @@
             </@layout.formGroup>
 
             <@layout.formGroup key="email" required=false formGroupClass="${messagesPerField.printIfExists('email','has-error')}">
-            <div id="email">${(account.email!'')}</div>
-                <#--  <input type="text" class="form-control" id="email" name="email" value="${(account.email!'')}" disabled="disabled" />  -->
+            <#--  <div id="email">${(account.email!'')}</div>  -->
+                <input type="text" class="form-control" id="email" name="email" value="${(account.email!'')}" disabled="disabled" style="padding:0 0 12px 0;" />
             </@layout.formGroup>
             <#if !realm.registrationEmailAsUsername>
                 <@layout.formGroup key="username" required=false formGroupClass="${messagesPerField.printIfExists('username','has-error')}">
@@ -201,18 +201,15 @@
         <@layout.contentHeader required=false; section>
             ${msg("withdrawalTitle")}
         </@layout.contentHeader>        
-        </br>
-        ${msg("withdrawalStep2_Message")}
-        </br>
-        <hr>
-
+          <div id = 'page-descript'>${msg("withdrawalStep2_Message")}</div>
+     <hr id='hr-top'>
     
         <#assign withdrawalUrl = url.accountUrl?replace("^(.*)(/account/?)(\\?(.*))?$", "$1/console/withdrawal?$4", 'r') />
         <form id="withdrawal-form" action="${withdrawalUrl}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
             <input type="hidden" id="stateChecker-withdrawal" name="stateChecker" value="${stateChecker}">
             <@layout.formGroup key="email" required=false formGroupClass="${messagesPerField.printIfExists('email','has-error')}">
-                <input type="text" class="form-control" id="email-withdrawal" name="email" value="${(account.username!'')}" disabled="disabled" />
+                <input type="text" class="form-control" id="email-withdrawal" name="email" value="${(account.username!'')}" disabled="disabled" style="padding:0 0 12px 0;"/>
             </@layout.formGroup>
 
 
@@ -220,7 +217,7 @@
                     <div>
                         <#if password.passwordSet>
                             <div class="passwordBox">
-                                <input type="password" class="form-control" id="password" name="password" value="${(account.password!'')}" onkeyup="withdrawalSubmitButtonAbled(); return false"/>
+                                <input type="password" class="form-control" id="password" name="password" value="${(account.password!'')}" placeholder="${msg("insertPassword")}" onkeyup="withdrawalSubmitButtonAbled(); return false"/>
                                 <div id="eye-password" class="eye" onclick="clickEye(this)"></div>
                                 <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_empty" style="display: none">
                                     ${msg("MSG_ERROR_PASSWORD_EMPTY")}
@@ -237,7 +234,7 @@
                                     <#if password.passwordSet>
                                         <div class="boundaryBox">
                                             <hr />
-                                                <span class="text">${msg("or")}</span>
+                                                <span class="text">${msg("or_kr")}</span>
                                             <hr />
                                         </div>
                                     </#if>
@@ -268,10 +265,10 @@
                 </@layout.formGroup>
 
 
-            <hr>
-            <h4 style="display: inline-block;">${msg("withdrawalStep2_body1")}</h4>
-            <h4 style="color: #ff0000; display: inline-block;">${msg("withdrawalSubmit")}</h4>
-            <h4 style="display: inline-block;">${msg("withdrawalStep2_body2")}</h4>            
+            <hr id = 'hr-bottom'>
+            <h4 style="display: inline-block;color: #646969;">${msg("withdrawalStep2_body1")}</h4>
+            <h4 style="color: #0F1727;font-weight:bold; display: inline-block;">${msg("withdrawalSubmit")}</h4>
+            <h4 style="display: inline-block;color: #646969;">${msg("withdrawalStep2_body2")}</h4>            
             <@layout.formButtonGroup>
                 <div id="buttons">
                     <#if url.referrerURI??><a href="${(url.referrerURI!'')}">${kcSanitize(msg("backToApplication")?no_esc)}</a></#if>            

@@ -358,8 +358,8 @@ header .navbar {
   padding: 0 ;
   height: 30px;
   width: auto;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 500;
   border-radius: 2px;
   text-align: center;
   color: #000000;
@@ -483,9 +483,9 @@ header .navbar {
   width: 476px;
   height: 40px;
   font-size: 14px;
-  border: 1px solid #acb0bc;
-  border-radius: 4px;
   color: #000000;
+  border: 1px solid #A6ABBB;
+  border-radius: 8px;
 }
 
 .form-horizontal .control .form-control::placeholder {
@@ -496,7 +496,6 @@ header .navbar {
 .form-horizontal .control .form-control:focus {
   background: #ffffff;
   border: 1px solid #042a54;
-  border-radius: 4px;
   box-shadow: none;
 }
 
@@ -878,9 +877,8 @@ color: #213557;
   height: 194px;
   padding: 13px 20px 20px 20px;
   background: #ffffff;
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border-radius: 2px;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.20);
+  border-radius: 12px;
 }
 
 #account-cancel .cancelModal .md_content .md_content__header {
@@ -913,7 +911,7 @@ color: #213557;
 
 #account-cancel .cancelModal .md_content hr {
   margin: 13px 0 20px 0;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid #242E3C;
 }
 
 #account-cancel .cancelModal .md_content .md_content__text {
@@ -932,7 +930,9 @@ color: #213557;
   margin-top: 20px;
   width: 68px;
   height: 32px;
-  background-color: #042a54;
+  background: #233558;
+  box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.10);
+  border-radius: 4px;
   font-weight: normal;
   font-size: 14px;
   color: #ffffff;
@@ -958,9 +958,13 @@ color: #213557;
 }
 
 #account-cancel .cancelModal .md_content .modal_button_left {
-  background-color: white;
+  background: #FFFFFF;
+  border: 1px solid #EFF0F1;
+  box-shadow: 1px 2px 5px 1px rgba(64,71,78,0.10);
+  border-radius: 4px;
   color: #042a54;
-  border: solid 1px #cccccc;
+  margin-right: 5px;
+
 }
 
 #account-cancel .cancelModal .md_content .modal_button_left:hover {
@@ -1252,6 +1256,8 @@ color: #213557;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+
 }
 .snsBox:hover {
   font-weight: bold;
@@ -1259,11 +1265,14 @@ color: #213557;
 .snsBox .message {
   margin-left: 8px;
   font-size: 16px;
-  font-weight: bolder;
+  font-weight: bold;
 }
 /* kakao */
 .snsBox.kakao {
-  background-color: #fddc3f;
+  background: #FDDC3F;
+  border: 1px solid #FFDB00;
+  box-shadow: 1px 4px 8px 2px rgba(253,220,63,0.25);
+  border-radius: 8px;
 }
 .snsBox.kakao:hover {
   background-color: #e8c322;
@@ -1288,11 +1297,15 @@ color: #213557;
 }
 .boundaryBox hr {
   width: 40%;
+  border-top: 1px solid #DDD9D4;
+ 
 }
 .boundaryBox .text {
   width: 20%;
   text-align: center;
   line-height: 40px;
+  color: #646969;
+  
 }
 
 /* Password Icon */
@@ -1349,9 +1362,8 @@ color: #213557;
   height: 194px;
   padding: 13px 20px 20px 20px;
   background: #ffffff;
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border-radius: 2px;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.20);
+  border-radius: 12px;
 }
 
 .modal .md_content .md_content__header {
@@ -1368,15 +1380,15 @@ color: #213557;
 }
 
 .modal .md_content .md_content__header .md_content__header__close {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   background-image: url("../img/close.svg");
   cursor: pointer;
 }
 
 .modal .md_content hr {
   margin: 13px 0 20px 0;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid #242E3C;;
 }
 
 .modal .md_content .md_content__text {
@@ -1388,14 +1400,17 @@ color: #213557;
 }
 
 .modal .md_content .md_content__button {
+  margin-top: 50px;
   text-align: end;
 }
 
 .modal .md_content .button {
-  margin-top: 20px;
+
   width: 68px;
   height: 32px;
-  background-color: #042a54;
+  background: #233558;
+  box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.10);
+  border-radius: 4px;
   font-weight: normal;
   font-size: 14px;
   color: #ffffff;

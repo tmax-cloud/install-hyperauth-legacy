@@ -42,7 +42,9 @@ border-radius: 10px;
 
 /* btn_solid_mint */
 .btn-primary {
-  background: #042A54;
+  background: #233558;
+box-shadow: 1px 4px 12px 4px rgba(62,64,68,0.09);
+border-radius: 10px;
   border: none;
   color: #ffffff;
 }
