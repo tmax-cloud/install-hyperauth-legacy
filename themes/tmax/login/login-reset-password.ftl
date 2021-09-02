@@ -35,6 +35,9 @@
                     <div class="error_message" id="error_register_by_sns" style="display: none">
                         ${msg("MSG_ERROR_FINDPASSWORD_3")}
                     </div>
+                    <div class="error_message" id="error_empty_email" style="display: none">
+                        ${msg("MSG_ERROR_FINDPASSWORD_4")}
+                    </div>
                 </div>
 
             </div>

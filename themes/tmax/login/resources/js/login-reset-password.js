@@ -8,8 +8,10 @@ function idChange(send_email) {
   const error_wrong_email = document.getElementById("error_wrong_email");
   const email_class = document.getElementById("email").classList;
   const error_none_email = document.getElementById("error_none_email");
+  const error_empty_email = document.getElementById("error_empty_email");
   error_wrong_email.style.display = "none";
   error_none_email.style.display = "none";
+  error_empty_email.style.display = "none";
   email_class.contains("has-error") && email_class.remove("has-error");
   setTimeout(() => {
     const id_input = document.getElementById("email");
@@ -37,11 +39,13 @@ async function postVerifiactionEmail(email) {
     const error_register_by_sns = document.getElementById(
       "error_register_by_sns"
     );
+    const error_empty_email = document.getElementById("error_empty_email");
 
     email_class.contains("has-error") && email_class.remove("has-error");
     try {
       error_none_email.style.display = "none";
       error_register_by_sns.style.display = "none";
+      error_empty_email.style.display = "none";
 
       email_class.contains("has-error") && email_class.remove("has-error");
       email_button.disabled = true;
@@ -54,6 +58,9 @@ async function postVerifiactionEmail(email) {
             email_class.contains("has-error") || email_class.add("has-error");
           } else if (err.response.data === "No Corresponding User") {
             error_none_email.style.display = "block";
+            email_class.contains("has-error") || email_class.add("has-error");
+          } else if (err.response.data === "Email Not Found") {
+            error_empty_email.style.display = "block";
             email_class.contains("has-error") || email_class.add("has-error");
           }
           // catch로 이동하기 위한 에러 발생
