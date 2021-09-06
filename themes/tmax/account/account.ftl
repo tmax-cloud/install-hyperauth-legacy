@@ -284,17 +284,20 @@
         <@layout.contentHeader required=false; section>
             ${msg("withdrawalTitle")}
         </@layout.contentHeader>        
-        </br>
-        ${msg("withdrawalSucess_Message")}
-        </br>        
-        <hr>
+        <div id = 'page-descript'>${msg("withdrawalSucess_Message")}</div>
+        <hr id='hr-top'>
+        
+        
         <div id="success-image">        
             <p class="image"></p>                            
         </div>
         <div id="success-text">
-            <h3>${msg("withdrawalSucess_body1")}</h3>
-            <h3>${msg("withdrawalSucess_body2")}</h3>
-            <h3>${msg("withdrawalSucess_body3")}</h3>
+            <p>
+                ${msg("withdrawalSucess_body1")}<br/>
+                ${msg("withdrawalSucess_body2")}<br/>
+                ${msg("withdrawalSucess_body3")}
+            </p>
+        
             <div class="contact-info">
                 <div class="contact-box">
                     ${msg("callCenter")}<br>
@@ -304,7 +307,7 @@
                 <h3>${msg("withdrawalSucess_body5")}</h3>
             </div>
         </div>
-        <hr>
+        <hr id = 'hr-bottom'>
         <@layout.formButtonGroup>
             <div id="buttons">
                 <#if url.referrerURI??><a href="${(url.referrerURI!'')}">${kcSanitize(msg("backToApplication")?no_esc)}</a></#if>            
@@ -317,22 +320,21 @@
             ${msg("withdrawalTitle")}
         </@layout.contentHeader>
         <div>
-        </br>
-        ${msg("withdrawalFailure_Message")}
-        </br> 
-        <hr>       
+           <div id = 'page-descript'> ${msg("withdrawalFailure_Message")}</div>
+     <hr id='hr-top'>
+      
         <div id="failure-image">
             <p class="image"></p>             
         </div>
         <div id="failure-text">
-            <h3 id="disableService">${msg("withdrawalFailure_body1")}</h3>
-            <h3>${msg("withdrawalFailure_body2")}</h3>
+            <p id="disableService">${msg("withdrawalFailure_body1")}<br/>${msg("withdrawalFailure_body2")}</p>
+          
             <div class="contact-info">
                 ${msg("callCenter")}<br>
                 ${msg("supportEmail")}
             </div>            
         </div>        
-        <hr>
+          <hr id = 'hr-bottom'>
         <@layout.formButtonGroup>
             <div id="buttons">
                 <#if url.referrerURI??><a href="${(url.referrerURI!'')}">${kcSanitize(msg("backToApplication")?no_esc)}</a></#if>            

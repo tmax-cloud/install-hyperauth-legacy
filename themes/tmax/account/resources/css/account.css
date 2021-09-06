@@ -1170,18 +1170,37 @@ color: #213557;
 #success-image {
   background: url("../img/Illust_signout.svg") no-repeat center;
   background-size: 100% 100%;
-  width: 84px;
-  height: 75px;
+  width: 135px;
+  height: 135px;
   margin: auto;
+  margin-top: 50px;
 }
 #failure-image {
+  margin-top: 50px;
   background: url("../img/Illust_signout_fail.svg") no-repeat center;
   background-size: 100% 100%;
-  width: 84px;
-  height: 75px;
+  width: 135px;
+  height: 135px;
   margin: auto;
 }
-
+#success-text p{
+  margin : 30px 0 50px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #3E3E3E;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+}
+#failure-text p{
+  margin : 30px 0 50px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #3E3E3E;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+}
 #success-text h3,
 #failure-text h3 {
   text-align: center;
@@ -1196,6 +1215,20 @@ color: #213557;
   text-align: center;
   font-size: 14px;
   margin: 24px auto;
+}
+#withdrawal-success #buttons{
+  margin-top: 50px;
+}
+#withdrawal-success #buttons button{
+  width: 380px;
+  height: 53px;
+}
+#withdrawal-failure #buttons{
+  margin-top: 50px;
+}
+#withdrawal-failure #buttons button{
+  width: 380px;
+  height: 53px;
 }
 
 /* Session */
