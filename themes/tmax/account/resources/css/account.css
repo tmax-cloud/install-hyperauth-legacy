@@ -1244,11 +1244,20 @@ color: #213557;
 
 /* Logo */
 /* SNS Logo*/
-#kakao .control-label {
-  background: url("../img/logo_sns_link_Kakao.png") no-repeat center;
+#naver .control-label {
+  background: url("../img/naver_snslink.svg") no-repeat center;
   background-size: 100% 100%;
-  width: 150px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  margin: auto 16px auto 30px;
+}
+
+#kakao .control-label {
+  background: url("../img/kakao_snslink.svg") no-repeat center;
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+  margin: auto 16px auto 30px;
 }
 /* Session Client Logo */
 #account.logo {
@@ -1502,11 +1511,7 @@ color: #213557;
 
 
 /* ===========================account 회원 정보=================================== */
-/* #account-update #picture{
- margin: 20px 0 20px 168px;
- height: 200px;
- max-width: 300px;
-} */
+
 #email{
   font-size: 14px;
 color: #000000;
@@ -1592,4 +1597,43 @@ margin:0;
 #userProfileImg-delete-button:active{
   background: #EFF1F3;
   
+}
+/* ======================SNS연동================== */
+#federated-identities .form-group{
+  background: #F8F8F8;
+  border-radius: 4px;
+  height: 72px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+#federated-identities .label label{
+  margin:16px 16px 16px 30px;
+  float: left;
+}
+#federated-identities .form-group  .label #snsTitle{
+  font-family: NotoSansCJKkr-Medium;
+  font-size: 19px;
+  color: #000000 !important;
+  margin: 22px auto;
+}
+#federated-identities .form-group .control{
+  justify-content: flex-end;
+  margin-right:30px;
+
+}
+
+#federated-identities #sns-username{
+  background: #E9EBEE;
+  border-radius: 8px;
+  height: 40px;
+  width: fit-content;
+  display: inline-block;
+  font-size: 15px;
+color: #333333;
+letter-spacing: 0;
+padding: 8px 20px 10px 20px;
+font-family: NotoSansCJKkr-bold;
+margin:17px 470px 15px 0;
 }
