@@ -14,22 +14,28 @@
             <#--<input disabled="true" class="form-control" value="${identity.userName!}">-->
             <#if identity.connected>
                 <#if federatedIdentity.removeLinkPossible>
-                    <div id ='sns-username'>${identity.userName!}</div>
+                <div id = "sns-username-wrapper">
+                        <div id ='sns-username'>${identity.userName!}</div>
+              </div>
                     <form id="SNS-form" action="${url.socialUrl}" method="post" class="form-inline">
                     
                     <#--  <input id ='sns-username'  disabled="true" class="form-control" value="${identity.userName!}">  -->
                         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
                         <input type="hidden" id="action" name="action" value="remove">
                         <input type="hidden" id="providerId" name="providerId" value="${identity.providerId!}">
-                        <button id="remove-link-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!}" onclick="openCheckModal(); return false;">${msg("doSNSRemove")}</button>
+                       
+                        
+                        <button style = "width:128px;min-width:auto;"id="remove-link-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!}" onclick="openCheckModal(); return false;">${msg("doSNSRemove")}</button>
+       
                     </form>
                 </#if>
             <#else>
+                <div style ="visibility:hidden">이름</div> 
                 <form id="SNS-form" action="${url.socialUrl}" method="post" class="form-inline">
                     <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
                     <input type="hidden" id="action" name="action" value="add">
                     <input type="hidden" id="providerId" name="providerId" value="${identity.providerId!}">
-                    <button id="add-link-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!}">${msg("doSNSAdd")}</button>
+                    <button  style = "width:128px;min-width:auto;" id="add-link-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!}">${msg("doSNSAdd")}</button>
                 </form>
             </#if>
         </@layout.formGroup>
