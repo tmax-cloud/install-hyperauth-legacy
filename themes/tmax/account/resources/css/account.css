@@ -714,7 +714,10 @@ color: #646969;
 color: #213557;
 }
 .rightMargin {
-  margin-right: 50px;
+  margin:5px 110px 5px 0;
+  font-family: NotoSansCJKkr-Regular;
+  font-size: 14px;
+  float: left;
 }
 
 .withdrawalCancel {
@@ -735,14 +738,14 @@ color: #213557;
   width: 100%;
 }
 .illustBox div {
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   width: 600px;
   height: 200px;
-  background: url(../img/Illust_2ndconfirm.svg) no-repeat center center;
+  background: url(../img/2step.png) no-repeat center center;
 }
 
 #hr-top {
-  border-top: 3px solid #000000;
+  border-top: 2px solid #000000;
   margin:30px 0;
 }
 #hr-bottom{
@@ -1233,10 +1236,11 @@ color: #213557;
 
 /* Session */
 #logout-all-sessions {
-  width: 148px;
-  height: 36px;
-  border-radius: 1px;
-  font-size: 14px;
+ padding: 0px 14px;
+ box-sizing:content-box;
+  width: 153px;
+  min-width: auto;
+  
 }
 .table {
   margin-top: 24px;
@@ -1619,21 +1623,30 @@ margin:0;
   margin: 22px auto;
 }
 #federated-identities .form-group .control{
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-right:30px;
 
-}
 
+}
+#federated-identities #sns-username-wrapper{
+  display: flex;
+  align-items: center;
+}
 #federated-identities #sns-username{
   background: #E9EBEE;
   border-radius: 8px;
   height: 40px;
   width: fit-content;
-  display: inline-block;
+
   font-size: 15px;
 color: #333333;
 letter-spacing: 0;
 padding: 8px 20px 10px 20px;
 font-family: NotoSansCJKkr-bold;
-margin:17px 470px 15px 0;
+margin-left: 40px;
+
+}
+#SNS-form{
+  display: flex;
+  align-items: center;
 }
