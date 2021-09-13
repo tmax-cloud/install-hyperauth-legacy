@@ -26,7 +26,7 @@ header .navbar {
 }
 
 .header .container {
-  background: #31475e;
+  background: #242E3C;
   position: relative;
   margin: 0;
   padding: 0;
@@ -36,7 +36,7 @@ header .navbar {
 
 @media (max-width: 767px) {
   .header .container {
-    background: #31475e;
+    background: #242E3C;
   }
 }
 
@@ -231,7 +231,8 @@ header .navbar {
 
 /* Sidebar */
 .bs-sidebar {
-  background-color: #f4f6f8;
+  border-right: 1px solid #D4D6D6;
+  background: #FFFFFF;
   padding-right: 0;
   padding-left: 0;
   z-index: 20;
@@ -243,7 +244,7 @@ header .navbar {
 .bs-sidebar ul {
   list-style: none;
   margin-bottom: 20px;
-  padding: 11px 12px 0px 12px;
+  padding:12px 0 0 0 ;
 }
 
 .bs-sidebar ul li:not(:last-child) {
@@ -252,16 +253,17 @@ header .navbar {
 }
 
 .bs-sidebar ul li a {
-  background: #f4f5f5;
+  background: #FFFFFF;
   display: block;
-  padding: 9px 13.5px 11px 16px;
+  padding: 9px 13.5px 11px 28px;
   font-size: 16px;
   border: none;
   border-radius: 1px;
   line-height: 0px;
   color: #000000;
-  width: 312px;
+  width: 100%;
   height: 48px;
+ 
   /*vertical-align: middle;*/
 }
 
@@ -272,7 +274,8 @@ header .navbar {
 }
 
 .bs-sidebar ul li.active a {
-  background: #dae6ec;
+  background: #F0F2F4;
+  width: 100%;
   border: none;
   border-radius: 0px;
   color: #000000;
@@ -281,46 +284,49 @@ header .navbar {
 
 /* Sidebar icon */
 .bs-sidebar ul li #account_icon {
-  background: url("../img/lnb_Admin_info.svg");
+  background: url("../img/person_outline.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
 }
+
 .bs-sidebar ul li #password_icon {
-  background: url("../img/lnb_change_password.svg");
+  background: url("../img/vpn_key_outline.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
 }
 .bs-sidebar ul li #addtionalAuth_icon {
-  background: url("../img/lnb_2nd_confirm.svg");
+  background-image: url("data:image/svg+xml,%3Csvg class ='lock_outline' width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Elnb/lock_outline%3C/title%3E%3Cdefs%3E%3Cpath d='M12,17 C13.1,17 14,16.1 14,15 C14,13.9 13.1,13 12,13 C10.9,13 9.99999999,13.9 9.99999999,15 C9.99999999,16.1 10.9,17 12,17 L12,17 Z M18,7.99999995 L17,7.99999995 L17,5.99999995 C17,3.23999996 14.76,0.999999954 12,0.999999954 C9.23999999,0.999999954 6.99999997,3.23999996 6.99999997,5.99999995 L6.99999997,7.99999995 L5.99999997,7.99999995 C4.89999997,7.99999995 3.99999997,8.89999999 3.99999997,9.99999995 L3.99999997,20 C3.99999997,21.1 4.89999997,22 5.99999997,22 L18,22 C19.1,22 20,21.1 20,20 L20,9.99999995 C20,8.89999999 19.1,7.99999995 18,7.99999995 L18,7.99999995 Z M8.89999999,5.99999998 C8.89999999,4.28999997 10.29,2.89999996 12,2.89999996 C13.71,2.89999996 15.1,4.28999997 15.1,5.99999998 L15.1,7.99999998 L8.89999999,7.99999998 L8.89999999,5.99999998 L8.89999999,5.99999998 Z M18,20 L5.99999997,20 L5.99999997,9.99999999 L18,9.99999999 L18,20 L18,20 Z' id='path-1'%3E%3C/path%3E%3C/defs%3E%3Cg id='lnb/lock_outline' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpolygon id='Base' points='-5.00000006e-08 -4.9999926e-08 24.0000001 -4.9999926e-08 24.0000001 24.0000001 -5.00000006e-08 24.0000001'%3E%3C/polygon%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'%3E%3C/use%3E%3C/mask%3E%3Cg id='Icon' fill-rule='nonzero'%3E%3C/g%3E%3Crect id='↳-🎨-Color' fill='%23000000' mask='url(%23mask-2)' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3C/g%3E%3C/svg%3E");
+  color:red;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
 }
+
 .bs-sidebar ul li #social_icon {
-  background: url("../img/lnb_sns_link.svg");
+  background: url("../img/phone.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
 }
 .bs-sidebar ul li #aggrement_icon {
-  background: url("../img/lnb_personal_info.svg");
+  background: url("../img/privacy_tip.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
 }
 .bs-sidebar ul li #sessions_icon {
   background: url("../img/lnb_Session_setting.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
 }
 
 /* sidebar text */
@@ -332,6 +338,9 @@ header .navbar {
   position: absolute;
 }
 .bs-sidebar ul li .title {
+  font-family: NotoSansCJKkr-Medium;
+  font-weight: medium;
+font-size: 16px;
   margin: auto 20px;
   line-height: 25px;
 }

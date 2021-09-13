@@ -30,7 +30,7 @@
             <div class="navbar-header">
                 <div class="container">
                     <h1 class="navbar-title">Tmax</h1>
-                    <div class="navbar-bg-left"></div>
+                    <#--  <div class="navbar-bg-left"></div>  -->
                     <!--<div class="navbar-bg-right"></div>-->
                 </div>
             </div>
