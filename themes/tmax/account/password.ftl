@@ -14,53 +14,60 @@
 
         <#if password.passwordSet>
             <@layout.formGroup key="currentPassword">
-            <div>
+            <div style= 'position:relative;'>
                 <input type="password" class="form-control" id="password" name="password" autofocus autocomplete="current-password" onblur="validatePassword(); return false;"/>
-                 <div class="${properties.kcInputWrapperClass!} error_message" id="error_old_password_empty" style="display: none">
-                ${msg("MSG_ERROR_PASSWORD_EMPTY")}
+                <div> 
+                    <div class="${properties.kcInputWrapperClass!} error_message" id="error_old_password_empty" style="display: none">
+                    ${msg("MSG_ERROR_PASSWORD_EMPTY")}
+                    </div>
+                    <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_wrong" style="display: none">
+                        ${msg("MSG_ERROR_PASSWORD_WRONG")}
+                    </div>
                 </div>
-                <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_wrong" style="display: none">
-                    ${msg("MSG_ERROR_PASSWORD_WRONG")}
-                </div>
+                <div id="eye-password" class="eye" onclick="clickEye(this)"></div>
             </div>
 
-                <div id="eye-password" class="eye" onclick="clickEye(this)"></div>
             </@layout.formGroup>
           
 
             <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
 
             <@layout.formGroup key="password-new" msgKey="passwordNew">
-            <div> 
+            <div  style= 'position:relative;'> 
                 <input type="password" class="form-control" id="password-new" name="password-new" autocomplete="new-password" onblur="validatePasswordNew(); return false;">
-                <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_empty" style="display: none">
-                    ${msg("MSG_ERROR_PASSWORD_EMPTY")}
+                <div >
+                    <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_empty" style="display: none">
+                        ${msg("MSG_ERROR_PASSWORD_EMPTY")}
+                    </div>
+                    <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_length" style="display: none">
+                        ${msg("MSG_ERROR_PASSWORD_LENGTH")}
+                    </div>
+                    <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_type" style="display: none">
+                        ${msg("MSG_ERROR_PASSWORD_TYPE")}
+                    </div>
+                    <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_unchange" style="display: none">
+                        ${msg("MSG_ERROR_PASSWORD_UNCHANGE")}
+                    </div>
                 </div>
-                <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_length" style="display: none">
-                    ${msg("MSG_ERROR_PASSWORD_LENGTH")}
-                </div>
-                <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_type" style="display: none">
-                    ${msg("MSG_ERROR_PASSWORD_TYPE")}
-                </div>
-                <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_unchange" style="display: none">
-                    ${msg("MSG_ERROR_PASSWORD_UNCHANGE")}
-                </div>
-            </div>
                 <div id="eye-password-new" class="eye" onclick="clickEye(this)"></div>
+                
+            </div>
             </@layout.formGroup>
            
             <@layout.formGroup key="password-confirm" msgKey="passwordConfirm">
-            <div> 
+            <div  style= 'position:relative;'> 
                 <input type="password" class="form-control" id="password-confirm" name="password-confirm" autocomplete="new-password" onblur="validatePasswordConfirm(); return false;">
-                <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_confirm_empty" style="display: none">
+               <div> 
+                  <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_confirm_empty" style="display: none">
                     ${msg("MSG_ERROR_PASSWORD_EMPTY2")}
                 </div>
                 <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_confirm_unmatch" style="display: none">
                     ${msg("MSG_ERROR_PASSWORD_UNMATCHING")}
-                </div>
+                </div></div>
+                <div id="eye-password-confirm" class="eye" onclick="clickEye(this)"></div>
+             
             
             </div>
-                <div id="eye-password-confirm" class="eye" onclick="clickEye(this)"></div>
             </@layout.formGroup>
 
             <hr id="hr-bottom">

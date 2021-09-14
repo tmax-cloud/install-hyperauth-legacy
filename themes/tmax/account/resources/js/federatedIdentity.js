@@ -1,9 +1,22 @@
 (function lableChange() {
-  const div = document.querySelector(".label");
-  const label = document.querySelector(".control-label");
-  const idforDiv = label.innerHTML.trim();
-  div.setAttribute("id", idforDiv);
-  label.innerHTML = "";
+  const div = document.querySelectorAll(".label");
+
+  div.forEach(function(divItem){
+    const lable = divItem.childNodes[1]
+    const idforDiv =lable.innerHTML.trim();
+    divItem.appendChild(document.createElement('div') )
+    const snsTitle = divItem.lastChild;
+    snsTitle.setAttribute("id", "snsTitle");
+      if(idforDiv=="kakao"){
+        snsTitle.innerHTML ="카카오톡"
+      }else{
+        snsTitle.innerHTML ="네이버"
+      }
+    divItem.setAttribute("id", idforDiv);
+    lable.innerHTML = "";
+
+
+  })
 })();
 
 
