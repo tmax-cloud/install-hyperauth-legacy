@@ -10,6 +10,6 @@
             <use xlink:href="#path-1"></use>
         </mask>
         <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
-        <rect id="↳-🎨-Color" fill="#555555" mask="url(#mask-2)" x="0" y="0" width="24" height="24"></rect>
+        <rect id="↳-🎨-Color" fill="#000000" mask="url(#mask-2)" x="0" y="0" width="24" height="24"></rect>
     </g>
 </svg>

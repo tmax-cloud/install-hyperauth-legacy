@@ -14,7 +14,7 @@
 }
 
 .login-body .login-pf-page .login-pf-accounts {
-  /* max-width: 850px; */
+  height: auto;
 }
 
 .login-body #kc-registration {
