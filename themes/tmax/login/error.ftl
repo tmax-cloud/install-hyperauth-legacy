@@ -31,13 +31,6 @@
     <meta name="robots" content="noindex, nofollow">
 </head>
 
-<script>
-    function backToApplication(){
-         <#if client?? && client.baseUrl?has_content>
-        location.href ="${client.baseUrl}"
-          </#if>
-    } 
-</script>
 <body>
 
 <div class='error-box'>
@@ -50,4 +43,11 @@
 
  </div>
 </body>
+<script>
+    function backToApplication(){
+        <#if client?? && client.baseUrl?has_content>
+                <p><a id="backToApplication" href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+        </#if>
+    } 
+    </script>
 </html>  
