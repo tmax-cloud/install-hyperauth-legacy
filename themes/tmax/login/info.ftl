@@ -1,4 +1,5 @@
 <#import "template.ftl" as layout>
+
 <@layout.registrationLayout displayMessage=false; section>
     <#if section = "header">
         <#if message.summary == msg('emailVerifiedMessage')>
@@ -60,7 +61,9 @@
                         <span id = 'connect-complete-span'> ${msg("finishIdpUserVerificationMessage1_2")}</span>
                          ${msg("finishIdpUserVerificationMessage1_3", identityProviderVendor, hyperauthUserName)?no_esc}
 
-                       <span  id = 'connect-info-span'> ${msg("finishIdpUserVerificationMessage2", identityProviderVendor, identityProviderUserName)?no_esc}</span>
+                       <span id = 'connect-info-span'>
+                       ${msg("finishIdpUserVerificationMessage2",identityProviderVendor, identityProviderUserName)?no_esc}
+                       </span>
                     </div>
                 </div>
                 <div class="${properties.kcFormGroupClass!}">
@@ -86,5 +89,11 @@
         </#if>
         <script type="text/javascript" src="${url.resourcesPath}/js/axios.min.js"></script>
         <script type="text/javascript" src="${url.resourcesPath}/js/info.js"></script>
+        <#--  <script>
+            let vendor = "${msg(identityProviderVendor)}"
+            console.log(vendor)
+            let text  = document.getElementById('connect-info-span');
+            text.innerHTML = "${msg("finishIdpUserVerificationMessage2", vendor, identityProviderUserName)?no_esc}";
+        </script>  -->
     </#if>
 </@layout.registrationLayout>
