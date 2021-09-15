@@ -902,7 +902,11 @@ color: #243352;
   color: #3e3e3e;
   margin-top: 10px;
 }
+.template-body .otp-send-faild-button{
+  margin-top: 95px; 
+  font-size: 18px;
 
+}
 /* back-to-login */
 
 /* form options : backToLogin */
