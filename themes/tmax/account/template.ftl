@@ -82,7 +82,7 @@
 <#--                <#if realm.userManagedAccessAllowed && features.authorization><li class="<#if active=='authorization'>active</#if>"><a href="${url.resourceUrl}"><p class="title">${msg("myResources")}</p></a></li></#if>-->
             </ul>
         </div>
-
+        <div class = "content-area-wrapper">
         <div class="content-area">
             <!--<#if message?has_content>
                 <div class="alert alert-${message.type}">
@@ -98,7 +98,7 @@
                     <div class="md_content">
                         <div class="md_content__header">
                             <span class="md_content__header__title">
-                                ${msg("alertModalTitle")}
+                                ${msg("doSave")}
                             </span>
                             <span class="md_content__header__close" onclick="closeAlertModal()"></span>
                         </div>
@@ -117,12 +117,14 @@
 
             <#nested "content">
         </div>
+        </div>
     </div>
     <#if properties.scripts_template_hyperauth?has_content>
         <#list properties.scripts_template_hyperauth?split(' ') as script>
             <script type="text/javascript" src="${url.resourcesPath}/${script}"></script>
         </#list>
     </#if>
+    <script type="text/javascript" src="${url.resourcesPath}/js/template.js"></script>
 </body>
 </html>
 </#macro>

@@ -42,7 +42,6 @@
          </#if>
     </div>
     <div class="illust"></div>
-
  </div>
 </body>
 

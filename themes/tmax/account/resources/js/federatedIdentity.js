@@ -8,9 +8,11 @@
     const snsTitle = divItem.lastChild;
     snsTitle.setAttribute("id", "snsTitle");
       if(idforDiv=="kakao"){
-        snsTitle.innerHTML ="카카오톡"
-      }else{
+        snsTitle.innerHTML ="카카오"
+      }else if(idforDiv=="naver"){
         snsTitle.innerHTML ="네이버"
+      }else{
+        snsTitle.innerHTML =idforDiv
       }
     divItem.setAttribute("id", idforDiv);
     lable.innerHTML = "";

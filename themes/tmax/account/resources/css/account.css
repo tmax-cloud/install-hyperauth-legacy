@@ -1,5 +1,6 @@
 html {
   height: 100%;
+
 }
 
 body {
@@ -193,7 +194,11 @@ header .navbar {
     }
 }
 */
+.content-area-wrapper{
+  border-left: 1px solid #D4D6D6;
+}
 .content-area {
+ 
   background-color: #ffffff;
   padding: 30px 24px;
   min-height: 100%;
@@ -231,7 +236,6 @@ header .navbar {
 
 /* Sidebar */
 .bs-sidebar {
-  border-right: 1px solid #D4D6D6;
   background: #FFFFFF;
   padding-right: 0;
   padding-left: 0;
@@ -1701,4 +1705,14 @@ margin-left: 40px;
 #SNS-form{
   display: flex;
   align-items: center;
+}
+
+#sns-account-message{
+  font-family: NotoSansCJKkr-Regular;
+  font-weight:bold;
+font-size: 16px;
+color: #000000;
+letter-spacing: 0;
+line-height: 24px;
+
 }

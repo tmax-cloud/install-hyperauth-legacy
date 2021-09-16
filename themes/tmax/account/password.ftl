@@ -86,7 +86,9 @@
                 </div>
             </@layout.cancelModal>
         <#else>
+        <div id = "sns-account-message">
             ${msg("changePasswordRegisteredBySns")}
+        </div>
         </#if>
     </form>
     <script type="text/javascript" src="${url.resourcesPath}/js/password.js"></script>
