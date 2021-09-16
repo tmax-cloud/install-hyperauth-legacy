@@ -38,7 +38,7 @@
         <p class ="error-title">${msg("errorTitle")}</P>
         <p class = 'error-message'>${message.summary?no_esc}</p>
          <#if client?? && client.baseUrl?has_content>
-        <p class = "backToApplication"><a id="backToApplication" href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+        <div class = "backToApplication" onclick="location.href ='${client.baseUrl}'">${kcSanitize(msg("backToApplication"))?no_esc}</div>
          </#if>
     </div>
     <div class="illust"></div>

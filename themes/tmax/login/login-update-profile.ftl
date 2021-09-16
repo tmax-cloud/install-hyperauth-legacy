@@ -208,7 +208,7 @@
                 </div> 
                 <div class="${properties.kcFormGroupClass!}">
                     <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                        <button class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="button" id="sendVerificationEmailForNewAccountButton" onclick="sendVerificationEmailForNewAccount()" disabled>${msg("sendVerificationEmail")}</button>
+                        <button style = "margin-top:200px"class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="button" id="sendVerificationEmailForNewAccountButton" onclick="sendVerificationEmailForNewAccount()" disabled>${msg("sendVerificationEmail")}</button>
                     </div>
                 </div>
             </form>

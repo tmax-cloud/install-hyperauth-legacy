@@ -13,8 +13,9 @@
 .welcome-img {
   background: url("../img/Illust_welcome.svg") no-repeat top;
   margin: auto;
-  width: 71px;
-  height: 90px;
+  width: 110px;
+  height: 113px;
+  background-size: cover;
 }
 
 .welcome-img-kakao {
@@ -230,17 +231,49 @@ div::-webkit-scrollbar-track {
   flex-direction: column;
 }
 
+.template-body.register-body .card-pf::-webkit-scrollbar-thumb{
+  margin-right: 5px;
+  height: 233px;
+  width: 5px;
+  padding-right: 10px;
+  background: #B8BBBE;
+border-radius: 5px;
+}
 .register-body #register_button {
   margin-top: 60px;
   margin-bottom: 38px;
 }
-
+#step1 #terms-wrpper{
+  height: 40px;
+  width: 400px;
+ padding:10px 0 10px 10px;
+ box-sizing: border-box;
+}
+#step1 #terms-wrpper:hover{
+  background: #EBEBEB;
+  border: 1px solid #F4F4F4;
+}
 #step1 .agree {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
+  margin-top: 8px;
+  padding:10px 10px 10px 10px;
+  height: 40px;
+  width: 400px;
+ 
+  box-sizing: border-box;
 }
 
+#step1 .agree-wrapper{
+  background: #F8F8F8;
+  width: 400px;
+
+border: 1px solid #F4F4F4;
+}
+#step1 .agree-wrapper:hover{
+  background: #EBEBEB;
+border: 1px solid #F4F4F4;
+}
 hr {
   border-top: 1px solid #d3d3d3;
 }
@@ -248,7 +281,7 @@ hr {
 #step1 label {
   font-size: 14px;
   color: #3e3e3e;
-  
+  text-decoration: none;
   display: block;
   padding-left: 25px;
   font-weight: 500;
@@ -281,12 +314,13 @@ hr {
 }
 
 #step1 .term {
-  margin-top: 10px;
+  margin: 0 20px 10px 10px;
   max-width: 380px;
   height: 200px;
+  box-sizing: border-box;
   width: 100%;
-  border: 1px solid #d3d3d3;
-  background: #f4f5f5;
+  border: none;
+  background: #ffffff;
   padding: 7px 0px 7px 7px;
   resize: none;
   overflow-y: scroll;
@@ -1068,10 +1102,9 @@ color: #243352;
   width: 390px;
   height: 194px;
   padding: 13px 20px 20px 20px;
-  background: #ffffff;
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border-radius: 2px;
+  background: #FFFFFF;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.20);
+  border-radius: 12px;
 }
 
 #email-sent .modal .md_content .md_content__header {
@@ -1097,7 +1130,7 @@ color: #243352;
 
 #email-sent .modal .md_content hr {
   margin: 13px 0 20px 0;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid  #242E3C;
 }
 
 #email-sent .modal .md_content .md_content__text {
@@ -1112,7 +1145,9 @@ color: #243352;
   margin-top: 20px;
   width: 68px;
   height: 32px;
-  background-color: #042a54;
+  background: #233558;
+box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.10);
+border-radius: 4px;
   font-weight: normal;
   font-size: 14px;
   color: #ffffff;

@@ -41,22 +41,28 @@
                         line-height: 29px;
                         margin:0 0 40px 0;
                 "><span style=" color: #003EE4">인증버튼</span>을 눌러 계정을 인증해 주세요.</p>
-
-                         <a  href="${link}" 
-                         target="_blank" 
-                         style="
+                        <div style="
                          background: #1C4FD8;
-                         border-radius: 4px;
+                         border-radius: 4px!important;
+                         font-weight:bold;
+                         padding:8px 0 8px 0;
+                         box-sizing:border-box;
                         font-size: 16px;
                         color: #FFFFFF;
                          text-decoration: none; 
                          display: block;
                          width:190px;
-                         height:40px
-                         margin:0 0 40px 0;">
-						이메일 인증             
-				1        </a>
-                   
+                         height:40px;
+                         cursor:pointer;
+                         text-align:center;
+                         margin:0 0 40px 0;"
+                        
+                         ><a href='${link}'
+                         style ='
+                          font-weight:bold;
+                         font-size: 16px;
+                        color: #FFFFFF;
+                         text-decoration: none;diplay:inline-block;padding:0;'>이메일 인증</a></div>
                     <p id = 'descript'
                         style="    font-family: NotoSansCJKkr-Regular;
                         font-size: 14px;
