@@ -37,17 +37,13 @@
     <div class ='error-text-box' >
         <p class ="error-title">${msg("errorTitle")}</P>
         <p class = 'error-message'>${message.summary?no_esc}</p>
-        <button onclick="backToApplication()">${kcSanitize(msg("backToApplication"))?no_esc}</button>
+         <#if client?? && client.baseUrl?has_content>
+        <p class = "backToApplication"><a id="backToApplication" href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+         </#if>
     </div>
     <div class="illust"></div>
 
  </div>
 </body>
-<script>
-    function backToApplication(){
-        <#if client?? && client.baseUrl?has_content>
-                <p><a id="backToApplication" href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
-        </#if>
-    } 
-    </script>
+
 </html>  
