@@ -195,6 +195,7 @@ header .navbar {
 }
 */
 .content-area-wrapper{
+  height: inherit;
   border-left: 1px solid #D4D6D6;
 }
 .content-area {
