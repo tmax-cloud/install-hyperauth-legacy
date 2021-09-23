@@ -154,9 +154,9 @@
         <br>
         <p><a href="#" onclick="openAgreementModal(1); return false;">
             ${msg("withdrawalAcountAgreement")}
-        </a></p>
-        <p> | </p>
-        <p><a href="#" onclick="openAgreementModal(2); return false;">
+        </a>
+        |  
+        <a href="#" onclick="openAgreementModal(2); return false;">
             ${msg("withdrawalServiceAgreement")}
         </a></p>        
         <hr>
