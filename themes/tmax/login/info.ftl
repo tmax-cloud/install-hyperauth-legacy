@@ -29,6 +29,7 @@
                         ${msg("welcomeInstruction1")?no_esc}
                         <#if isBrokerLogin?has_content && isBrokerLogin == "true" && brokerEmail?has_content && brokerVendor?has_content>
                             ${msg("finishIdpUserVerificationMessage2", brokerVendor, brokerEmail)?no_esc}
+                            
                         </#if>
                     </p>
                 </div>
@@ -59,12 +60,17 @@
                     <div id="welcome-instruction">
                         ${msg("finishIdpUserVerificationMessage1")}
                         <span id = 'connect-complete-span'> ${msg("finishIdpUserVerificationMessage1_2")}</span>
-                         ${msg("finishIdpUserVerificationMessage1_3", identityProviderVendor, hyperauthUserName)?no_esc}
-
-                       <span id = 'connect-info-span'>
-                       ${msg("finishIdpUserVerificationMessage2",identityProviderVendor, identityProviderUserName)?no_esc}
-                       </span>
+                        <span> ${msg("finishIdpUserVerificationMessage1_3", hyperauthUserName)?no_esc}</span>
+                        <span> ${msg("${identityProviderVendor}")} ${msg("finishIdpUserVerificationMessage1_4")}</span>
+                 
                     </div>
+                    <div id="welcome-connect-info">
+                       <span id = 'connect-info-span'>
+                       ${msg("finishIdpUserVerificationMessage2")} ${msg("${identityProviderVendor}")}
+                       ${msg("finishIdpUserVerificationMessage2_2", identityProviderUserName)?no_esc}
+                       </span>
+                       </div>
+                    
                 </div>
                 <div class="${properties.kcFormGroupClass!}">
                     <div id = 'connent-complete-bt'>

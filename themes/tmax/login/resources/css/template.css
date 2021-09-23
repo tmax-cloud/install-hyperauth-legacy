@@ -1020,9 +1020,15 @@ color: #243352;
   color: #131724;
   font-weight: 500;
 }
-#email-sent #welcome-instruction #connect-info-span{
+#email-sent #welcome-connect-info{
+  margin-top:50px;
+  font-size: 16px;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+  font-weight: 400;
   color: #888888;
-}
+} 
 
 #email-sent #email-sent-instruction {
   font-size: 16px;
