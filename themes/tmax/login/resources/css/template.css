@@ -260,19 +260,21 @@ border-radius: 5px;
   padding:10px 10px 10px 10px;
   height: 40px;
   width: 400px;
- 
+
   box-sizing: border-box;
 }
 
 #step1 .agree-wrapper{
-  background: #F8F8F8;
+  background: #ffffff;
   width: 400px;
-
-border: 1px solid #F4F4F4;
+  
+  margin-bottom: 10px;
+  border: 1px solid #ffffff;
 }
 #step1 .agree-wrapper:hover{
-  background: #EBEBEB;
-border: 1px solid #F4F4F4;
+ 
+  background-color: #EBEBEB;
+  border: 1px solid #F4F4F4;
 }
 hr {
   border-top: 1px solid #d3d3d3;

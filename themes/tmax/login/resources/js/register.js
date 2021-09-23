@@ -101,12 +101,19 @@ function clickAgreeInput(e) {
 function clickArrow(e) {
   const arrow = document.getElementById(e);
   const term = document.getElementById(e.split("-")[0]);
+  const agreeWrapper =  term.parentElement
   if (arrow.classList.contains("up")) {
     arrow.classList.remove("up");
     term.style.display = "none";
+    agreeWrapper.style.backgroundColor ="#ffffff";
+    agreeWrapper.style.border ="none";
+
   } else {
     arrow.classList.add("up");
     term.style.display = "block";
+    agreeWrapper.style.backgroundColor ="#F8F8F8";
+  
+  
   }
 }
 

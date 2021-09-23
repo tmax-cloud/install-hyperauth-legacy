@@ -41,6 +41,8 @@
                     </div> 
                     <div class="term" style="display:none;" id="account_privacy_duty_terms" disabled></div>
                 </div>
+
+                 <div  class="agree-wrapper">
                 <div class="agree">
                     <div >
                         <input type="checkbox" name="agree" id="check_3" onclick="clickAgreeInput('check_3')">
@@ -49,6 +51,9 @@
                     <div class="arrow" id="account_terms-arrow" onclick="clickArrow('account_terms-arrow')"></div>
                 </div>
                 <div class="term" style="display:none;" id="account_terms" disabled></div>
+                 </div>
+
+                  <div  class="agree-wrapper">
                 <div class="agree">
                     <div>
                         <input type="checkbox" name="agree" id="check_4" onclick="clickAgreeInput('check_4')">
@@ -57,6 +62,9 @@
                     <div class="arrow" id="service_terms-arrow" onclick="clickArrow('service_terms-arrow')"></div>
                 </div>
                 <div class="term" style="display:none;" id="service_terms" disabled></div>
+                </div>
+
+                 <div  class="agree-wrapper">
                 <div class="agree">
                     <div>
                         <input type="checkbox" name="agree" id="check_5" onclick="clickAgreeInput('check_5')">
@@ -65,6 +73,9 @@
                     <div class="arrow" id="privacy_terms-arrow" onclick="clickArrow('privacy_terms-arrow')"></div>
                 </div>
                 <div class="term" style="display:none;" id="privacy_terms" disabled></div>
+                </div>
+
+                 <div  class="agree-wrapper">
                  <div class="agree">
                     <div>
                         <input type="checkbox" name="agree" id="check_6" onclick="clickAgreeInput('check_6')">
@@ -73,13 +84,17 @@
                     <div class="arrow" id="third_privacy_terms-arrow" onclick="clickArrow('third_privacy_terms-arrow')"></div>
                 </div>
                 <div class="term" style="display:none;" id="third_privacy_terms" disabled></div>
-                <div class="agree">
-                    <div>
-                        <input type="checkbox" name="agree" id="check_7" onclick="clickAgreeInput('check_7')">
-                        <label for="check_7">${msg("MSG_CREATEACCOUNT_SERVICEAGREEMENT_14")}<span style = 'color: #223558;'>${msg("optional")}</span></label>
-                    </div>
                 </div>
 
+            
+                 <div id = "terms-wrpper">
+                    
+                        <input type="checkbox" name="agree" id="check_7" onclick="clickAgreeInput('check_7')">
+                        <label for="check_7">${msg("MSG_CREATEACCOUNT_SERVICEAGREEMENT_14")}<span style = 'color: #223558;'>${msg("optional")}</span></label>
+                   
+                </div>
+               
+                
                 <div class="${properties.kcFormGroupClass!}">
                     <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                         <input id="agree_button" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="button" value="${msg("MSG_CREATEACCOUNT_SERVICEAGREEMENT_8")}" onclick="clickAgreeButton()" disabled={true} />
