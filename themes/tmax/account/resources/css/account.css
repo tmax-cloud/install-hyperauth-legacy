@@ -196,7 +196,8 @@ header .navbar {
 */
 .content-area-wrapper{
   height: inherit;
-  border-left: 1px solid #D4D6D6;
+  overflow: auto;
+  position: relative;
 }
 .content-area {
  
@@ -206,7 +207,7 @@ header .navbar {
   /* height: 100%; */
   border: none;
   border-radius: 4px;
-  margin-left: 336px;
+  /* margin-left: 336px; */
 }
 
 .margin-bottom {
@@ -216,7 +217,7 @@ header .navbar {
 @media (min-width: 1024px) {
   .bs-sidebar {
     float: left;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     width: 190px;
   }
   /*
@@ -238,6 +239,7 @@ header .navbar {
 /* Sidebar */
 .bs-sidebar {
   background: #FFFFFF;
+  border-right: 1px solid #D4D6D6;
   padding-right: 0;
   padding-left: 0;
   z-index: 20;
