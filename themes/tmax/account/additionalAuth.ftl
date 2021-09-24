@@ -25,8 +25,8 @@
             <span class="slider round"></span>
         </label>
 
-        <#--  <p id="off">OFF</p>
-        <p id="on" style="display:none;">ON</p>  -->
+        <p id="off"></p>
+        <p id="on" style="display:none;"></p>
 
         <hr id="hr-bottom" style ="margin:50px 0;">
      

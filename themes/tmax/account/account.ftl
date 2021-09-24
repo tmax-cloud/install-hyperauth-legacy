@@ -115,7 +115,7 @@
                             <span class="md_content__header__title">
                                 ${msg("accountCancelModalTitle")}
                             </span>
-                            <span class="md_content__header__close" onclick="closeCancelModal()"></span>
+                            <span class="md_content__header__close" onclick="closeAccountCancelModal()"></span>
                         </div>
                         <hr>
                         <div class="md_content__text">
@@ -124,7 +124,7 @@
                             ${msg("accountCancelModalMessage2")}
                         </div>
                         <div class="md_content__button">
-                            <div id="button-cancel" class="button modal_button_left" onclick="closeCancelModal()">
+                            <div id="button-cancel" class="button modal_button_left" onclick="closeAccountCancelModal()">
                                 ${msg("doCancel")}
                             </div>
                             <div id="button-ok" class="button modal_button_right" onclick="cancelChangeName()">
@@ -152,13 +152,15 @@
         <h3>${msg("withdrawalStep1_body1")}</h3>
         <h3>${msg("withdrawalStep1_body2")}</h3>
         <br>
-        <p><a href="#" onclick="openAgreementModal(1); return false;">
-            ${msg("withdrawalAcountAgreement")}
-        </a>
-        |  
-        <a href="#" onclick="openAgreementModal(2); return false;">
+        <div id = "withdrawal-term-text">
+        <p id ="first-term"><a href="#" onclick="openAgreementModal(1); return false;">
+            ${msg("withdrawalAcountAgreement")}  
+        </a></p>
+        <p id = "bar"> | </p>  
+        <p><a href="#" onclick="openAgreementModal(2); return false;">
             ${msg("withdrawalServiceAgreement")}
-        </a></p>        
+        </a></p> 
+        </div>       
         <hr>
         <@layout.formButtonGroup>
             <div id="buttons">
@@ -273,7 +275,7 @@
                                 <span class="md_content__header__title">
                                     ${msg("snsAuthModalTitle")}
                                 </span>
-                                <span class="md_content__header__close" onclick="closeCancelModal()"></span>
+                                <span class="md_content__header__close" onclick="okSNSAuth()"></span>
                             </div>
                             <hr>
                             <div class="md_content__text">
@@ -345,7 +347,6 @@
         <div>
            <div id = 'page-descript'> ${msg("withdrawalFailure_Message")}</div>
      <hr id='hr-top'>
-      
         <div id="failure-image">
             <p class="image"></p>             
         </div>

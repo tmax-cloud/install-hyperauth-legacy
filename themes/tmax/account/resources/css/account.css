@@ -1519,7 +1519,7 @@ color: #213557;
 }
 
 .modal .md_content .md_content__button {
-  margin-top: 50px;
+  margin-top: 35px;
   text-align: end;
 }
 
@@ -1571,7 +1571,20 @@ color: #213557;
 #withdrawal-submit-button:disabled {
   cursor: not-allowed;
 }
+#withdrawal-term-text{
 
+  font-size: 15px;
+  font-weight: bold;
+}
+#withdrawal-term-text #first-term{
+float: left;
+}
+#withdrawal-term-text p{
+  display: inline-block;
+}
+#withdrawal-term-text #bar{
+  margin:0 10px 0 15px;
+}
 
 /* ===========================account 회원 정보=================================== */
 
