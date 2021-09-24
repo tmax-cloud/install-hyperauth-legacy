@@ -102,17 +102,17 @@ function clickArrow(e) {
   const arrow = document.getElementById(e);
   const term = document.getElementById(e.split("-")[0]);
   const agreeWrapper =  term.parentElement
-  if (arrow.classList.contains("up")) {
+  if (arrow.classList.contains("up")) { //닫으면
     arrow.classList.remove("up");
     term.style.display = "none";
-    agreeWrapper.style.backgroundColor ="#ffffff";
-    agreeWrapper.style.border ="none";
+    agreeWrapper.classList.remove("up");
 
-  } else {
+  } else { //펼치면
     arrow.classList.add("up");
-    term.style.display = "block";
-    agreeWrapper.style.backgroundColor ="#F8F8F8";
+    term.style.display = "block"; 
+    agreeWrapper.classList.add("up");
   
+    
   
   }
 }
