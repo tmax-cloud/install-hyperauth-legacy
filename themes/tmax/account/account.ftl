@@ -232,40 +232,63 @@
                         <#--<input disabled="true" class="form-control" value="${identity.userName!}">-->
 
                             <#if identity.connected>
-                                    <#if password.passwordSet>
-                                        <div class="boundaryBox">
-                                            <hr />
-                                                <span class="text">${msg("or_kr")}</span>
-                                            <hr />
-                                        </div>
-                                    </#if>
-            <#--                    <#if federatedIdentity.removeLinkPossible>-->
-                                    <#if identity.displayName = 'kakao'>
-                                    <#-- kakao api key를 hidden input으로 받는다.   -->
-                                        <div class="snsBox kakao" onclick="loginWithKakao()">
-                                            <input id="kakao-api-key" type="hidden" value="${(identity.kakaoJsKey!'')}">
-                                            <input id="kakao-username" type="hidden" value="${(identity.userName!'')}">
-                                            <a id="custom-login-btn" href="javascript:loginWithKakao()">
-                                                <img
-                                                        src="${url.resourcesPath}/img/btn_kakao_login.svg"
-                                                        width="20"
-                                                />
-                                            </a>
-                                            <span class="message kakao">KAKAO로 인증</span>
-                                        </div>
-                                    <#elseif identity.displayName = 'naver'>
-                                        <div class="snsBox naver" onclick="">
-                                            <div id="naver_id_login"></div>
-                                            <span class="message naver">NAVER로 인증</span>
-                                        </div>
-                                    </#if>
-            <#--                    </#if>-->
+                                <#if password.passwordSet>
+                                    <div class="boundaryBox">
+                                        <hr />
+                                            <span class="text">${msg("or_kr")}</span>
+                                        <hr />
+                                    </div>
+                                </#if>
+        <#--                    <#if federatedIdentity.removeLinkPossible>-->
+                                <#if identity.displayName = 'kakao'>
+                                <#-- kakao api key를 hidden input으로 받는다.   -->
+                                    <div class="snsBox kakao" onclick="loginWithKakao()">
+                                        <input id="kakao-api-key" type="hidden" value="${(identity.kakaoJsKey!'')}">
+                                        <input id="kakao-username" type="hidden" value="${(identity.userName!'')}">
+                                        <a id="custom-login-btn" href="javascript:loginWithKakao()">
+                                            <img
+                                                src="${url.resourcesPath}/img/btn_kakao_login.svg"
+                                                width="20"
+                                            />
+                                        </a>
+                                        <span class="message kakao">KAKAO로 인증</span>
+                                    </div>
+                                <#elseif identity.displayName = 'naver'>
+                                    <div class="snsBox naver" onclick="">
+                                        <div id="naver_id_login"></div>
+                                        <span class="message naver">NAVER로 인증</span>
+                                    </div>
+                                </#if>
+        <#--                    </#if>-->
                             </#if>
                         <#--  </@layout.formGroup>  -->
                         </#list>
                     </div>
                 </@layout.formGroup>
-
+                <div id="sns-auth">
+                    <div class="modal hidden">
+                        <div class="md_overlay"></div>
+                        <div class="md_content">
+                            <div class="md_content__header">
+                                <span class="md_content__header__title">
+                                    ${msg("snsAuthModalTitle")}
+                                </span>
+                                <span class="md_content__header__close" onclick="closeCancelModal()"></span>
+                            </div>
+                            <hr>
+                            <div class="md_content__text">
+                                ${msg("snsAuthModalMessage1")}
+                                <br>
+                                ${msg("snsAuthModalMessage2")}
+                            </div>
+                            <div class="md_content__button">
+                                <div id="button-ok" class="button modal_button_right" onclick="okSNSAuth()">
+                                    ${msg("doOK")}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             <hr id = 'hr-bottom'>
             <h4 style="display: inline-block;color: #646969;">${msg("withdrawalStep2_body1")}</h4>

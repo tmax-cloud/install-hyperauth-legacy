@@ -213,6 +213,7 @@ function openCancelModal() {
   document.querySelector(".cancelModal").classList.remove("hidden");
 }
 function closeCancelModal() {
+  console.log("CLOSE")
   document.querySelector(".cancelModal").classList.add("hidden");
 }
 

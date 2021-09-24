@@ -14,8 +14,11 @@ function loginWithKakao() {
         },
         success: function(response) {
             if(response.kakao_account.email ==kakao_username){
-              alert("인증되었습니다.")
+              // alert("인증되었습니다.")
               // 인증 완료 시, 탈퇴 신청 버튼에 vendor 값 넣어줌
+              //modal로 인증되었습니다. 띄우기만 하면 될듯
+              openSNSAuthModal();
+
               document
               .getElementById("withdrawal-submit-button")
               .setAttribute("data-vendor", "kakao");
@@ -37,6 +40,14 @@ function loginWithKakao() {
       alert(JSON.stringify(err));
     },
   });
+}
+
+function openSNSAuthModal() {
+  document.querySelector(".modal").classList.remove("hidden");
+}
+
+function okSNSAuth() {
+  document.querySelector(".modal").classList.add("hidden");
 }
 
 // naver

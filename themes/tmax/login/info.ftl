@@ -61,7 +61,7 @@
                         ${msg("finishIdpUserVerificationMessage1")}
                         <span id = 'connect-complete-span'> ${msg("finishIdpUserVerificationMessage1_2")}</span>
                         <span> ${msg("finishIdpUserVerificationMessage1_3", hyperauthUserName)?no_esc}</span>
-                        <span> ${msg("${identityProviderVendor}")} ${msg("finishIdpUserVerificationMessage1_4")}</span>
+                        <span> ${msg("${identityProviderVendor}")}${msg("finishIdpUserVerificationMessage1_4")}</span> 
                  
                     </div>
                     <div id="welcome-connect-info">
