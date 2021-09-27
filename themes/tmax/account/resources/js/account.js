@@ -212,7 +212,7 @@ function openCancelModal() {
     .classList.remove("modal_button_disabled");
   document.querySelector(".cancelModal").classList.remove("hidden");
 }
-function closeCancelModal() {
+function closeAccountCancelModal() {
   document.querySelector(".cancelModal").classList.add("hidden");
 }
 
@@ -279,6 +279,9 @@ function closeWithdrawalPage() {
   document.getElementById("withdrawal-success").classList.add("hidden");
   document.getElementById("withdrawal-failure").classList.add("hidden");
   document.getElementById("account-update").classList.remove("hidden");
+  document
+  .getElementById("withdrawal-submit-button")
+  .setAttribute("disabled", "disabled");
 }
 
 function nextWithdrawalPage() {
@@ -495,12 +498,12 @@ function getPrevUserPicture() {
       if (prevPicture != null && prevPicture.length > 0){
         document.getElementById("picture").style.display="block";
         document.getElementById("picture").src = `${serverUrl}/` + prevPicture;
-        pictureImporting = true;
         document.getElementById("userProfileImg-delete-button").style.display="block";
       } else {
         document.getElementById("picture").style.display="none";
         document.getElementById("userProfileImg-delete-button").style.display="none";
       }
+      pictureImporting = false;
     });
   } catch (e) {
     console.error(e);

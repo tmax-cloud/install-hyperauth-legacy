@@ -271,6 +271,17 @@ border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid #ffffff;
 }
+#step1 .agree-wrapper.up{
+  background: #F8F8F8;
+  border: 1px solid #F4F4F4;
+  width: 400px;
+  margin-bottom: 10px;
+  border: 1px solid #ffffff;
+}
+#step1 .agree-wrapper.up:hover{
+  background: #EBEBEB;
+border: 1px solid #F4F4F4;
+}
 #step1 .agree-wrapper:hover{
  
   background-color: #EBEBEB;
