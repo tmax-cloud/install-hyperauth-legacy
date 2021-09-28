@@ -450,11 +450,11 @@ function clickEye(e) {
 }
 
 const elImage = document.querySelector("#profilePicture");
-let importPicture = "";
+let importPicture = null;
 elImage.addEventListener("change", (evt) => {
   importPicture = evt.target.files[0];
   // console.log(picture)
-  chk(importPicture.name);
+  chk(importPicture);
 
   document.getElementById("picture").src = window.URL.createObjectURL(importPicture);
   document.getElementById("picture").style.display = "block";
@@ -479,8 +479,11 @@ elImage.addEventListener("change", (evt) => {
 });
 
 function chk(obj) {
-  if (/(\.gif|\.jpg|\.jpeg|\.png|\.bmp)$/i.test(obj) == false) {
+  if (/(\.gif|\.jpg|\.jpeg|\.png|\.bmp)$/i.test(obj.name) == false) {
     throw new Error('Unable to parse IMG file.');
+  }
+  if (obj.size > 512000){
+    throw new Error('Cannot Upload IMG file larger than 500KB.');
   }
   return;
 }
@@ -540,9 +543,24 @@ function ImportImageFile(){
     axios.post(
       `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email, fd
     ).then((response) => {
-      console.log(response);
-    });
+      console.log('response : ', JSON.stringify(response, null, 2))
+    }).catch( error => {
+      console.log('failed to import image file', error)
+    })
   } catch (e) {
-    console.error(e);   
+    console.error(e);
   }
 }
+
+// function ImportImageFile(){
+//   const email =  document.getElementById("email").value;
+//   let fd = new FormData();
+//   fd.append('imageFile', importPicture)
+//   fd.append('imageName', importPicture.name)
+//
+//   fetch(`${serverUrl}/auth/realms/`+ realmName + `/picture/` + email, {
+//     method: "POST",
+//     body: fd
+//   })
+//       .then((response) => console.log(response));
+// }
