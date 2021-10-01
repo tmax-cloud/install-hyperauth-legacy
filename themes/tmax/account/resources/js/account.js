@@ -492,7 +492,10 @@ function chk(obj) {
     document.getElementById('userProfileImg-message').style.display = "none"
     document.getElementById('userProfileImg-message-error').style.display = "inline-flex"
     document.getElementById("userProfileImg-delete-button").disabled = true;
-    throw new Error('Cannot Upload IMG file larger than 500KB.');
+    
+    
+    
+  throw new Error('Cannot Upload IMG file larger than 500KB.');
     
   }
   return;
