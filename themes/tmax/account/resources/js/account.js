@@ -1,8 +1,12 @@
 const serverUrl = document.location.origin;
 const MAX_NAME_LANGTH = 50;
+const realmName = document.getElementById("realmName").dataset.value;
 const getAccessToken = function () {
   return sessionStorage.getItem("accessToken");
 };
+let pictureImporting = false;
+let pictureDeleting = false;
+let fileUploadError = false;
 
 const validationStates = {
   email: false,
@@ -208,11 +212,20 @@ function openCancelModal() {
     .classList.remove("modal_button_disabled");
   document.querySelector(".cancelModal").classList.remove("hidden");
 }
-function closeCancelModal() {
+function closeAccountCancelModal() {
   document.querySelector(".cancelModal").classList.add("hidden");
 }
 
 function changeName() {
+
+  if (pictureDeleting){
+    deleteImageFile();
+    pictureDeleting = false;
+  }else if (pictureImporting){
+    ImportImageFile();
+    pictureImporting = false;
+  }
+
   const saveForm = document.getElementById("account-update-form");
 
   const email = document.createElement("input");
@@ -266,6 +279,9 @@ function closeWithdrawalPage() {
   document.getElementById("withdrawal-success").classList.add("hidden");
   document.getElementById("withdrawal-failure").classList.add("hidden");
   document.getElementById("account-update").classList.remove("hidden");
+  document
+  .getElementById("withdrawal-submit-button")
+  .setAttribute("disabled", "disabled");
 }
 
 function nextWithdrawalPage() {
@@ -304,7 +320,7 @@ async function submitWithdrawal() {
 
       const params = new URLSearchParams();
       params.append("password", password);
-      let passwordUrl = `${serverUrl}/auth/realms/tmax/password`;
+      let passwordUrl = `${serverUrl}/auth/realms/` + realmName + `/password`;
 
       const passwordResp = await axios.patch(passwordUrl, params, {
         params: {
@@ -411,7 +427,7 @@ async function getTerm(company) {
     const term = document.getElementById(company);
     const version = term.classList.contains("en") ? "latest_en" : "latest_ko";
     const resp = await axios.get(
-      `${serverUrl}/auth/realms/tmax/agreement/${company}?version=${version}&realmName=tmax`
+      `${serverUrl}/auth/realms/`+ realmName + `/agreement/${company}?version=${version}&realmName=` + realmName
     );
     term.innerHTML = resp.data;
   } catch (e) {
@@ -428,7 +444,157 @@ function clickEye(e) {
   } else {
     e.classList.add("activate");
     if (e.id === "eye-password") {
+
       document.getElementById("password").type = "text";
     }
   }
 }
+
+const elImage = document.querySelector("#profilePicture");
+let importPicture = null;
+elImage.addEventListener("change", (evt) => {
+
+  importPicture = evt.target.files[0];
+
+  chk(importPicture);
+  if(!fileUploadError){
+    pictureImporting = true;
+    pictureDeleting = false;
+
+    document.getElementById("picture").src = window.URL.createObjectURL(importPicture);
+    document.getElementById("picture").style.display = "block";
+    document.getElementById("account-save-button").disabled = false;
+    document.getElementById("userProfileImg-delete-button").style.display="flex";
+  
+    document.getElementById('userProfileImg-message').style.display = "inline-block"
+    document.getElementById('userProfileImg-message-error').style.display = "none"
+    document.getElementById("userProfileImg-delete-button").disabled = false;
+  }
+  else{
+    if(!pictureImporting){
+      document.getElementById("userProfileImg-delete-button").disabled = true;
+    }
+  }
+ 
+  // let reader = new FileReader();
+  // reader.readAsDataURL(picture);
+  // reader.onload = function () {
+  //     // console.log(reader.result);
+  //     document.getElementById("picture").src = reader.result;
+  //     document.getElementById("picture").style.display = "block";
+  //     pictureImporting = true;
+  //     document.getElementById("account-save-button").disabled = false;
+  //     document.getElementById("userProfileImg-delete-button").style.display="block";
+  // }
+
+});
+
+function chk(obj) {
+  
+
+  if (/(\.gif|\.jpg|\.jpeg|\.png|\.bmp)$/i.test(obj.name) == false) {
+    fileUploadError = true;
+    throw new Error('Unable to parse IMG file.');
+  }
+  else if (obj.size > 512000){
+    fileUploadError = true;
+    document.getElementById('userProfileImg-message').style.display = "none"
+    document.getElementById('userProfileImg-message-error').style.display = "inline-flex"
+    document.getElementById("account-save-button").disabled = true;
+    if(!pictureImporting){
+      document.getElementById("userProfileImg-delete-button").disabled = true;
+    }
+ 
+    throw new Error('Cannot Upload IMG file larger than 500KB.');
+    
+  }
+  else fileUploadError =false;
+
+  return;
+}
+
+getPrevUserPicture()
+function getPrevUserPicture() {
+  try {
+    const email =  document.getElementById("email").value;
+    axios.get(
+      `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email
+    ).then((response) => {
+      console.log(response);
+      let prevPicture = response.data.imagePath;
+      if (prevPicture != null && prevPicture.length > 0){
+        document.getElementById("picture").style.display="block";
+        document.getElementById("picture").src = `${serverUrl}/` + prevPicture;
+        document.getElementById("userProfileImg-delete-button").disabled=false;
+        pictureImporting = true;
+      } else {
+        document.getElementById("picture").style.display="none";
+        pictureImporting = false;
+      }
+    });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+function deleteImageFileCheck(){
+ 
+  if(pictureImporting){
+    document.getElementById("account-save-button").disabled = false;
+  }
+  pictureImporting = false;
+  pictureDeleting = true;
+  
+  document.getElementById("picture").style.display="none"; 
+  document.getElementById('userProfileImg-message').style.display = "inline-block"
+  document.getElementById('userProfileImg-message-error').style.display = "none"
+   
+}
+
+function deleteImageFile(){
+  try {
+    const email =  document.getElementById("email").value;
+    axios.delete(
+      `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email
+    ).then((response) => {
+      console.log(response);
+    });
+  } catch (e) {
+    console.error(e);   
+  }
+}
+
+function ImportImageFile(){
+
+
+  try {
+    const email =  document.getElementById("email").value;
+    let fd = new FormData();
+    fd.append('imageFile', importPicture)
+    fd.append('imageName', importPicture.name)
+    // data = { 'userName': email, 'base64EncodeImage': document.getElementById("picture").src };
+    axios.post(
+      `${serverUrl}/auth/realms/`+ realmName + `/picture/` + email, fd
+      ).then((response) => {
+        console.log('response : ', JSON.stringify(response, null, 2))
+        document.getElementById("userProfileImg-delete-button").disabled = false;
+      }).catch( error => {
+        console.log('failed to import image file', error)
+      })
+    } catch (e) {
+      console.error(e);
+  }
+}
+
+// function ImportImageFile(){
+//   const email =  document.getElementById("email").value;
+//   let fd = new FormData();
+//   fd.append('imageFile', importPicture)
+//   fd.append('imageName', importPicture.name)
+//
+//   fetch(`${serverUrl}/auth/realms/`+ realmName + `/picture/` + email, {
+//     method: "POST",
+//     body: fd
+//   })
+//       .then((response) => console.log(response));
+// }
