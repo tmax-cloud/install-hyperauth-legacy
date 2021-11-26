@@ -209,6 +209,7 @@ function passwordValidation() {
 function passwordConfirmRemoveValidation() {
   const none = document.getElementById("error_none_password_confirm");
   const wrong = document.getElementById("error_wrong_password_confirm");
+  
   none.style.display = "none";
   wrong.style.display = "none";
 }

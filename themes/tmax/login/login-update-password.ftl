@@ -11,7 +11,7 @@
         </div>
 
         <div id="kc-info" class="${properties.kcSignUpClass!}">
-            <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+            <div id="kc-info-wrapper" class="password-update-description" style = "font-size: 16px;color: #333333;margin-bottom: 50px;">
                 ${msg("MSG_RESETPASSWORD__2")}
             </div>
         </div>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="${properties.kcInputWrapperClass!} marginBottom">
-                    <input type="password" id="password" name="password-new" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__4")}" onkeyup="passwordChange()" onfocusout="passwordValidation()" />
+                    <input type="password" id="password" name="password-new" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__4")}" onchange="passwordChange()" onfocusout="passwordValidation()" />
                     <div class="error_message" id="error_none_password" style="display: none">
                         ${msg("MSG_ERROR_PASSWORD_1")}
                     </div>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="${properties.kcInputWrapperClass!} marginBottom">
-                    <input type="password" id="password_confirm" name="password-confirm" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__5")}" onkeyup="passwordChange()" onfocusout="passwordConfirmValidation()" />
+                    <input type="password" id="password_confirm" name="password-confirm" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__5")}" onchange="passwordChange()" onfocusout="passwordConfirmValidation()" />
                     <div class="error_message" id="error_none_password_confirm" style="display: none">
                         ${msg("MSG_ERROR_CONFIRMPASSWORD_1")}
                     </div>
@@ -85,7 +85,7 @@
                         <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" />
                         <button class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" type="submit" name="cancel-aia" value="true" />${msg("doCancel")}</button>
                     <#else>
-                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="button" value="${msg("MSG_RESETPASSWORD__6")}" disabled = {true} id = "save_password" />      
+                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" disabled = {true} id = "save_password" style ="margin-top:90px"/>      
                     </#if>
                 </div>
             </div>
