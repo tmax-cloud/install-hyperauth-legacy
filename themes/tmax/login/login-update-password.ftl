@@ -36,6 +36,9 @@
                     <div class="error_message" id="error_wrong_password" style="display: none">
                         ${msg("MSG_ERROR_PASSWORD_3")}
                     </div>
+                    <div class="error_message" id="error_sameAsBefore_password" style="display: none">
+                        ${msg("MSG_ERROR_PASSWORD_4")}
+                    </div>
                     <#if message?has_content>
                         <#if message.type = 'error' && message.summary = 'samePasswordMessage'>
                             <div class="error_message" id="error_sameAsBefore_password" style="display: block">
@@ -79,10 +82,10 @@
 
                 <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                     <#if isAppInitiatedAction??>
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" />
-                    <button class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" type="submit" name="cancel-aia" value="true" />${msg("doCancel")}</button>
+                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" />
+                        <button class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" type="submit" name="cancel-aia" value="true" />${msg("doCancel")}</button>
                     <#else>
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" />
+                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="button" value="${msg("MSG_RESETPASSWORD__6")}" disabled = {true} id = "save_password" />      
                     </#if>
                 </div>
             </div>
