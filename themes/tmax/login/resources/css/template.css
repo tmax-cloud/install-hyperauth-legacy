@@ -926,11 +926,14 @@ div.form-group .form-control.has-error::placeholder {
   /* border: 1px solid #EFF0F1; */
   box-shadow: 2px 3px 8px 2px rgba(105,116,128,0.10);
   border-radius: 12px;
-
   font-size: 18px;
+  color: #243352;
+}
 
-color: #243352;
-  }
+.template-body #withdrawal-cancel-button-wraper .btn-primary:hover {
+  background: #243352;
+  color: #FFFFFF;
+}
 
 .template-body input[readonly] {
   background: #e4e4e4;
