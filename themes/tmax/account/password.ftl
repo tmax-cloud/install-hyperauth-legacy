@@ -1,6 +1,11 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='password' bodyClass='password'; section>
 
+    <#if properties.styles_template?has_content>
+        <#list properties.styles_template_password?split(' ') as style>
+            <link href="${url.resourcesPath}/${style}?${properties.version}" rel="stylesheet" />
+        </#list>
+    </#if>
     <@layout.contentHeader ; section>
         ${msg("changePasswordHtmlTitle")}
     </@layout.contentHeader>
@@ -14,7 +19,7 @@
 
         <#if password.passwordSet>
             <@layout.formGroup key="currentPassword">
-            <div style= 'position:relative;'>
+            <div class="passwordInputBox">
                 <input type="password" class="form-control" id="password" name="password" autofocus autocomplete="current-password" onkeyup="passwordChange(); return false;"/>
                 <div> 
                     <div class="${properties.kcInputWrapperClass!} error_message" id="error_old_password_empty" style="display: none">
@@ -33,7 +38,7 @@
             <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
 
             <@layout.formGroup key="password-new" msgKey="passwordNew">
-            <div  style= 'position:relative;'> 
+            <div class="passwordInputBox"> 
                 <input type="password" class="form-control" id="password-new" name="password-new" autocomplete="new-password" onkeyup="passwordChange(); return false;">
                 <div >
                     <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_empty" style="display: none">
@@ -55,7 +60,7 @@
             </@layout.formGroup>
            
             <@layout.formGroup key="password-confirm" msgKey="passwordConfirm">
-            <div  style= 'position:relative;'> 
+            <div class="passwordInputBox"> 
                 <input type="password" class="form-control" id="password-confirm" name="password-confirm" autocomplete="new-password" onkeyup="passwordChange(); return false;">
                <div> 
                   <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_confirm_empty" style="display: none">

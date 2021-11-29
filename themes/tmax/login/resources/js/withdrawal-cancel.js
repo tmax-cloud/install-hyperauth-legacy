@@ -25,4 +25,3 @@ function cancelWithdrawal() {
   document.getElementById("withdrawal-cancel-form").submit();
 }
 
-const withdrawalCancelButton = document.getElementById("withdrawal_cancel_button");
