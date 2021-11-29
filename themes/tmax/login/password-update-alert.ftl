@@ -41,7 +41,7 @@
                         <div class="${properties.kcLabelWrapperClass!} password-update-alert-label">
                             <label for="confirmPassword" class="${properties.kcLabelClass!}">${msg("MSG_RESETPASSWORD__7")}</label>
                         </div>
-                        <div id="confirm_password_wrapper" class="${properties.kcInputWrapperClass!} marginBottom">
+                        <div id="confirm_password_wrapper" class="${properties.kcInputWrapperClass!} marginBottom-confirm">
                             <input type="password" id="confirmPassword" name="confirmPassword" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autocomplete="new-password" placeholder="${msg("MSG_RESETPASSWORD__5")}" onkeyup="passwordChange()"/>
                             <div class="error-container">
                                 <div class="error_message" id="error_none_password_confirm" style="display: none">
