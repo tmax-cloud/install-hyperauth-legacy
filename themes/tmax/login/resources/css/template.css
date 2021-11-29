@@ -1495,7 +1495,21 @@ color: #213557;
 
 #change-password-step2 .marginBottom {
   /* margin-bottom: 39px; */
+  padding:0;
 }
+
+#change-password-step2 .password-update-alert-label{
+  padding:0;
+}
+
+#change-password-step2 #password_wrapper{
+  padding:0;
+}
+
+#change-password-step2 #confirm_password_wrapper{
+  padding:0;
+}
+
 
 #change-password-step2 .error-container {
   min-height: 41px;

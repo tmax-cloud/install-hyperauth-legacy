@@ -95,7 +95,7 @@ function passwordConfirmValidation() {
   return true;
 }
 
-function passwordChange(inputId) {
+function passwordChange() {
   const save_button = document.getElementById("save_password");
   if (passwordValidation() && passwordConfirmValidation()) {
     save_button.disabled = false;
