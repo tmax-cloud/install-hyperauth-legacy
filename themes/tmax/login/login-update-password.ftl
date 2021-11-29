@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="${properties.kcInputWrapperClass!} marginBottom">
-                    <input type="password" id="password" name="password-new" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__4")}" onchange="passwordChange()" onfocusout="passwordValidation()" />
+                    <input type="password" id="password" name="password-new" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__4")}" onkeyup="passwordChange()" onfocusout="passwordValidation()" />
                     <div class="error_message" id="error_none_password" style="display: none">
                         ${msg("MSG_ERROR_PASSWORD_1")}
                     </div>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="${properties.kcInputWrapperClass!} marginBottom">
-                    <input type="password" id="password_confirm" name="password-confirm" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__5")}" onchange="passwordChange()" onfocusout="passwordConfirmValidation()" />
+                    <input type="password" id="password_confirm" name="password-confirm" class="${properties.kcInputClass!}<#if message?has_content> ${message.type}</#if>" autofocus placeholder="${msg("MSG_RESETPASSWORD__5")}" onkeyup="passwordChange()" onfocusout="passwordConfirmValidation()" />
                     <div class="error_message" id="error_none_password_confirm" style="display: none">
                         ${msg("MSG_ERROR_CONFIRMPASSWORD_1")}
                     </div>

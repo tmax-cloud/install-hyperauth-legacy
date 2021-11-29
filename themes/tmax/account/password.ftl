@@ -15,7 +15,7 @@
         <#if password.passwordSet>
             <@layout.formGroup key="currentPassword">
             <div style= 'position:relative;'>
-                <input type="password" class="form-control" id="password" name="password" autofocus autocomplete="current-password" onblur="validatePassword(); return false;"/>
+                <input type="password" class="form-control" id="password" name="password" autofocus autocomplete="current-password" onkeyup="passwordChange(); return false;"/>
                 <div> 
                     <div class="${properties.kcInputWrapperClass!} error_message" id="error_old_password_empty" style="display: none">
                     ${msg("MSG_ERROR_PASSWORD_EMPTY")}
@@ -34,7 +34,7 @@
 
             <@layout.formGroup key="password-new" msgKey="passwordNew">
             <div  style= 'position:relative;'> 
-                <input type="password" class="form-control" id="password-new" name="password-new" autocomplete="new-password" onblur="validatePasswordNew(); return false;">
+                <input type="password" class="form-control" id="password-new" name="password-new" autocomplete="new-password" onkeyup="passwordChange(); return false;">
                 <div >
                     <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_empty" style="display: none">
                         ${msg("MSG_ERROR_PASSWORD_EMPTY")}
@@ -56,7 +56,7 @@
            
             <@layout.formGroup key="password-confirm" msgKey="passwordConfirm">
             <div  style= 'position:relative;'> 
-                <input type="password" class="form-control" id="password-confirm" name="password-confirm" autocomplete="new-password" onblur="validatePasswordConfirm(); return false;">
+                <input type="password" class="form-control" id="password-confirm" name="password-confirm" autocomplete="new-password" onkeyup="passwordChange(); return false;">
                <div> 
                   <div class="${properties.kcInputWrapperClass!} error_message" id="error_password_confirm_empty" style="display: none">
                     ${msg("MSG_ERROR_PASSWORD_EMPTY2")}
