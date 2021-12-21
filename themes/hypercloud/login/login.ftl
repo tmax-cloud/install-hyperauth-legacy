@@ -1,4 +1,4 @@
-<#import "template-hypercloud.ftl" as layout>
+<#import "template.ftl" as layout>
 <@layout.registrationLayout bodyClass="template-body login-body" displayInfo=social.displayInfo displayWide=(realm.password && social.providers??); section>
     <#if section = "header">
         <div class="hypercloud-logo-img"></div>
