@@ -19,7 +19,7 @@
         <form id="kc-passwd-update-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
             <input type="text" id="username" name="username" value="${username}" autocomplete="username" readonly="readonly" style="display:none;"/>
             <input type="password" id="current-password" name="password" autocomplete="current-password" style="display:none;"/>
-
+            
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="password" class="${properties.kcLabelClass!}">${msg("MSG_RESETPASSWORD__3")}</label>
@@ -35,9 +35,6 @@
                     </div>
                     <div class="error_message" id="error_wrong_password" style="display: none">
                         ${msg("MSG_ERROR_PASSWORD_3")}
-                    </div>
-                    <div class="error_message" id="error_sameAsBefore_password" style="display: none">
-                        ${msg("MSG_ERROR_PASSWORD_4")}
                     </div>
                     <#if message?has_content>
                         <#if message.type = 'error' && message.summary = 'samePasswordMessage'>
@@ -85,7 +82,7 @@
                         <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" />
                         <button class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" type="submit" name="cancel-aia" value="true" />${msg("doCancel")}</button>
                     <#else>
-                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" disabled = {true} id = "save_password" onclick="this.disabled='disabled'; this.form.submit();" style ="margin-top:90px"/>      
+                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("MSG_RESETPASSWORD__6")}" disabled = {true} id = "save_password" onclick="this.disabled='disabled'; this.form.submit();" style ="margin-top:90px"/>
                     </#if>
                 </div>
             </div>

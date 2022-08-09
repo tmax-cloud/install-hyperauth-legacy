@@ -214,30 +214,17 @@ header .navbar {
   margin-bottom: 10px;
 }
 
-@media (min-width: 1024px) {
-  .bs-sidebar {
-    float: left;
-    /* margin-right: 20px; */
-    width: 190px;
-  }
-  /*
-    .content-area {
-        
-        float: left;
-        width: calc(100% - 210px);
-        
-    }
-    */
-}
+
 
 @media (max-width: 1023px) {
   .content-area {
-    margin: 0 -20px -20px;
+    margin: 0 0 -20px;
   }
 }
 
 /* Sidebar */
 .bs-sidebar {
+  float: left;
   background: #FFFFFF;
   border-right: 1px solid #D4D6D6;
   padding-right: 0;
@@ -248,13 +235,29 @@ header .navbar {
   height: 100%;
 }
 
+
+
+@media (max-width: 1023px) {
+  .bs-sidebar {
+    width: 230px;
+  }
+  /*
+    .content-area {
+
+        float: left;
+        width: calc(100% - 210px);
+
+    }
+    */
+}
+
+
 .bs-sidebar ul {
-  list-style: none;
   margin-bottom: 20px;
   padding:12px 0 0 0 ;
 }
 
-.bs-sidebar ul li:not(:last-child) {
+.bs-sidebar ul li {
   margin: 0;
   margin-bottom: 10px;
 }
@@ -289,6 +292,7 @@ header .navbar {
   opacity: 87%;
 }
 
+
 /* Sidebar icon */
 .bs-sidebar ul li #account_icon {
   background: url("../img/person_outline.svg");
@@ -296,7 +300,9 @@ header .navbar {
   background-repeat: no-repeat;
   height: 22px;
   width: 22px;
+  display: block;
 }
+
 
 .bs-sidebar ul li #password_icon {
   background: url("../img/vpn_key_outline.svg");
@@ -334,13 +340,13 @@ background-image: url("../img/lock_outline.svg");
   height: 22px;
   width: 22px;
 }
-.bs-sidebar ul li.active #account_icon {
-  background: url("../img/person_outline_active.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 22px;
-  width: 22px;
-}
+/*.bs-sidebar ul li.active #account_icon {*/
+/*  background: url("../img/person_outline_active.svg");*/
+/*  background-position: center center;*/
+/*  background-repeat: no-repeat;*/
+/*  height: 22px;*/
+/*  width: 22px;*/
+/*}*/
 
 .bs-sidebar ul li.active #password_icon {
   background: url("../img/vpn_key_outline_active.svg");
