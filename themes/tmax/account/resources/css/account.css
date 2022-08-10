@@ -40,11 +40,15 @@ header .navbar {
     background: #242E3C;
   }
 }
-
+/* .navbar-toggle {
+  float: left;
+  padding: 20px;
+} */
 .navbar-title {
   background: url("../img/gnb_logo.svg") no-repeat center;
   background-size: contain;
   position: absolute;
+  /* left: 60px; */
   left: 24px;
   width: 226px;
   height: 100%;
@@ -237,9 +241,9 @@ header .navbar {
 
 
 
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .bs-sidebar {
-    width: 230px;
+    width: 80px;
   }
   /*
     .content-area {
@@ -294,6 +298,33 @@ header .navbar {
 
 
 /* Sidebar icon */
+
+@media (max-width: 768px) {
+  /* 모바일인 경우 아이콘 없애고 가로로 배치 */
+  /* .bs-sidebar  {
+    display: none;
+  } */
+
+  .bs-sidebar ul li a .title {
+    display: none;
+  }
+  /* .bs-sidebar ul li a #password_icon {
+    display: none;
+  }
+  .bs-sidebar ul li a #addtionalAuth_icon {
+    display: none;
+  }
+  .bs-sidebar ul li a #social_icon {
+    display: none;
+  }
+  .bs-sidebar ul li a #aggrement_icon {
+    display: none;
+  }
+  .bs-sidebar ul li a #sessions_icon {
+    display: none;
+  } */
+}
+
 .bs-sidebar ul li #account_icon {
   background: url("../img/person_outline.svg");
   background-position: center center;
@@ -302,7 +333,6 @@ header .navbar {
   width: 22px;
   display: block;
 }
-
 
 .bs-sidebar ul li #password_icon {
   background: url("../img/vpn_key_outline.svg");

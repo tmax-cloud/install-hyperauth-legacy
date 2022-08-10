@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>${msg("accountManagementTitle")}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico">
     <#if properties.styles?has_content>
@@ -29,6 +30,13 @@
         <nav class="navbar" role="navigation">
             <div class="navbar-header">
                 <div class="container">
+                    <#--  <div class="navbar-toggle">
+                        <button id="nav-toggle" aria-controls="page-sidebar" aria-expanded="true" aria-label="Global navigation" class="pf-c-button pf-m-plain" type="button">
+                            <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;">
+                                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" transform=""></path>
+                            </svg>
+                        </button>
+                    </div>  -->
                     <h1 class="navbar-title">Tmax</h1>
                     <#--  <div class="navbar-bg-left"></div>  -->
                     <!--<div class="navbar-bg-right"></div>-->
