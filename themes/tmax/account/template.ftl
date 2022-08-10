@@ -30,21 +30,10 @@
         <nav class="navbar" role="navigation">
             <div class="navbar-header">
                 <div class="container">
-                    <#--  <div class="navbar-toggle">
-                        <button id="nav-toggle" aria-controls="page-sidebar" aria-expanded="true" aria-label="Global navigation" class="pf-c-button pf-m-plain" type="button">
-                            <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;">
-                                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" transform=""></path>
-                            </svg>
-                        </button>
-                    </div>  -->
                     <h1 class="navbar-title">Tmax</h1>
                     <#--  <div class="navbar-bg-left"></div>  -->
                     <!--<div class="navbar-bg-right"></div>-->
-                </div>
-            </div>
-            <div class="navbar-collapse navbar-collapse-1">
-                <div class="container">
-                    <ul class="nav navbar-nav navbar-utility">
+                    <ul class="navbar-utility">
                          <#if referrer?has_content && referrer.url?has_content && referrer.name == '${' + "client_security-admin-console" + '}'>
                             <li>
                                 <a href="${referrer.url}" id="referrer"><div class="icon ic-admin-console"></div>${msg("backTo",referrer.name)}</a>
@@ -68,8 +57,39 @@
                             <a href="${url.logoutUrl}"><!--<div class="icon ic-sign-out"></div>-->${msg("doSignOut")}</a>
                          </li>
                     </ul>
+                    <div class="navbar-utility-mobile">
+                         <a href="${url.logoutUrl}"><!--<div class="icon ic-sign-out"></div>-->${msg("doSignOut")}</a>
+                    </div>
                 </div>
             </div>
+            <#--  <div class="navbar-header">
+                <div class="container">
+                    <ul class="nav navbar-nav navbar-utility">
+                         <#if referrer?has_content && referrer.url?has_content && referrer.name == '${' + "client_security-admin-console" + '}'>
+                            <li>
+                                <a href="${referrer.url}" id="referrer"><div class="icon ic-admin-console"></div>${msg("backTo",referrer.name)}</a>
+                            </li>
+                         </#if>
+                         <#if realm.internationalizationEnabled>
+                            <li>
+                                <div class="kc-dropdown" id="kc-locale-dropdown">
+                                    <a href="#" id="kc-current-locale-link"><div class="icon ic-language"></div><div id="language-text">${locale.current}</div><div id="language-arrow"></div></a>
+                                    <ul>
+                                        <#list locale.supported as l>
+                                            <li class="kc-dropdown-item">
+                                                <a href="${l.url}">${l.label}</a>
+                                            </li>
+                                        </#list>
+                                    </ul>
+                                </div>
+                            </li>
+                         </#if>
+                         <li>
+                            <a href="${url.logoutUrl}">${msg("doSignOut")}</a>
+                         </li>
+                    </ul>
+                </div>
+            </div>  -->
         </nav>
     </header>
 
