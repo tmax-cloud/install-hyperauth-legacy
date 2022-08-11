@@ -24,7 +24,7 @@
 
 .tmax-logo{
   width: 150px;
-  height: 100px;
+  height: 80px;
   background: url(../img/logo_tmax.svg) no-repeat left top;
   background-size: 130px;
 }
@@ -63,7 +63,11 @@
   background: url(../img/logo_waplmath.svg) no-repeat left top;
   background-size: 130px;
 }
-
+@media (max-width: 768px) {
+  .rowBox{
+    display: block !important;
+  }
+}
 .rowBox{
   display: flex;
   margin-bottom: 20px;
