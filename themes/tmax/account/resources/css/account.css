@@ -430,6 +430,11 @@ font-size: 16px;
   font-weight: bold;
   color: #000000;
 }
+@media (max-width: 768px) {
+  #page-descript{
+    font-size: 13px !important;
+  }
+}
 #page-descript{
   font-family: NotoSansCJKkr-Regular;
   font-size: 16px;
