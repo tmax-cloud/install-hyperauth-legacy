@@ -516,7 +516,7 @@ font-size: 16px;
 @media (max-width: 767px) {
   .form-horizontal .form-group {
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: -15px;
   }
 }
 
@@ -611,6 +611,12 @@ font-size: 16px;
 
 #buttons {
   margin: auto auto;
+  display: flex;
+}
+@media (max-width: 768px) {
+  #buttons .btn {
+    min-width: 100px;
+}
 }
 .form-group.buttons .btn-primary {
   margin-left: 10px;
@@ -763,18 +769,26 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+@media (max-width: 768px) {
+  #usingCheckText {
+    display: block !important;
+  }
+  #usingCheckText a{
+    margin-left: 0px !important;
+  }
+}
 
 #usingCheckText {
   margin: 0px;
-  display: inline-block;
+  display: flex;
   font-size: 14px;
-color: #646969;
+  color: #646969;
   font-weight: bold;
 }
 #usingCheckText a{
-  margin-left: 4px;
+  margin-left: 5px;
   font-size: 14px;
-color: #213557;
+  color: #213557;
 }
 .rightMargin {
   margin:5px 110px 5px 0;
