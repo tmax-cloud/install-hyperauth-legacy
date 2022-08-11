@@ -125,24 +125,6 @@ header .navbar {
   .navbar-utility-mobile {
     display : block;
   }
-  /* .navbar-pf .navbar-utility > li > a,
-  .navbar-pf .navbar-utility > li > .kc-dropdown > a {
-    margin: 0 5px;
-  } */
-
-  /* .navbar-pf .navbar-utility > li > a,
-  .navbar-pf .navbar-utility > li > .kc-dropdown > a {
-    position: relative;
-    border-radius: 4px;
-  } */
-
-  /* .navbar-pf .navbar-utility > li:not(:last-child) > a::after,
-  .navbar-pf .navbar-utility > li:not(:last-child) > .kc-dropdown > a::after {
-    content: "";
-    position: absolute;
-    right: -5px;
-    height: 18px;
-  } */
 }
 
 .navbar-pf .navbar-utility > li .icon {
@@ -220,8 +202,6 @@ header .navbar {
 .margin-bottom {
   margin-bottom: 10px;
 }
-
-
 
 @media (max-width: 1023px) {
   .content-area {
@@ -303,29 +283,10 @@ header .navbar {
 /* Sidebar icon */
 
 @media (max-width: 768px) {
-  /* 모바일인 경우 아이콘 없애고 가로로 배치 */
-  /* .bs-sidebar  {
-    display: none;
-  } */
-
+  /* 모바일인 경우 LNB 메뉴명 없음 */
   .bs-sidebar ul li a .title {
     display: none;
   }
-  /* .bs-sidebar ul li a #password_icon {
-    display: none;
-  }
-  .bs-sidebar ul li a #addtionalAuth_icon {
-    display: none;
-  }
-  .bs-sidebar ul li a #social_icon {
-    display: none;
-  }
-  .bs-sidebar ul li a #aggrement_icon {
-    display: none;
-  }
-  .bs-sidebar ul li a #sessions_icon {
-    display: none;
-  } */
 }
 
 .bs-sidebar ul li #account_icon {

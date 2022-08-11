@@ -57,39 +57,12 @@
                             <a href="${url.logoutUrl}"><!--<div class="icon ic-sign-out"></div>-->${msg("doSignOut")}</a>
                          </li>
                     </ul>
+                    <#--  모바일인 경우 GNB에 로그아웃만 지원  -->
                     <div class="navbar-utility-mobile">
                          <a href="${url.logoutUrl}"><!--<div class="icon ic-sign-out"></div>-->${msg("doSignOut")}</a>
                     </div>
                 </div>
             </div>
-            <#--  <div class="navbar-header">
-                <div class="container">
-                    <ul class="nav navbar-nav navbar-utility">
-                         <#if referrer?has_content && referrer.url?has_content && referrer.name == '${' + "client_security-admin-console" + '}'>
-                            <li>
-                                <a href="${referrer.url}" id="referrer"><div class="icon ic-admin-console"></div>${msg("backTo",referrer.name)}</a>
-                            </li>
-                         </#if>
-                         <#if realm.internationalizationEnabled>
-                            <li>
-                                <div class="kc-dropdown" id="kc-locale-dropdown">
-                                    <a href="#" id="kc-current-locale-link"><div class="icon ic-language"></div><div id="language-text">${locale.current}</div><div id="language-arrow"></div></a>
-                                    <ul>
-                                        <#list locale.supported as l>
-                                            <li class="kc-dropdown-item">
-                                                <a href="${l.url}">${l.label}</a>
-                                            </li>
-                                        </#list>
-                                    </ul>
-                                </div>
-                            </li>
-                         </#if>
-                         <li>
-                            <a href="${url.logoutUrl}">${msg("doSignOut")}</a>
-                         </li>
-                    </ul>
-                </div>
-            </div>  -->
         </nav>
     </header>
 
