@@ -1328,6 +1328,13 @@ input:checked + .slider:before {
   font-size: 14px;
   margin: 24px auto;
 }
+@media (max-width: 768px) {
+  #success-text .contact-box,
+  #failure-text div {
+    width: 90%;
+    height: 100%;
+}
+}
 #withdrawal-success #buttons{
   margin-top: 50px;
 }
