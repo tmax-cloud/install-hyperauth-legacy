@@ -512,14 +512,17 @@ font-size: 16px;
   margin:0 0 30px 0;
 
 }
-
 @media (max-width: 767px) {
   .form-horizontal .form-group {
     flex-direction: column;
     margin-bottom: -15px;
   }
-}
+  #federated-identities .form-group {
+    flex-direction: initial;
+    margin-bottom: 15px;
+  }
 
+}
 .form-horizontal .label {
   margin-right: 10px;
   padding: 0;
@@ -1796,6 +1799,11 @@ margin-left: 40px;
 #SNS-form{
   display: flex;
   align-items: center;
+}
+@media (max-width: 768px) {
+  #SNS-form{
+    width: 45px;
+  }
 }
 
 #sns-account-message{
