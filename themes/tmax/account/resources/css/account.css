@@ -1247,7 +1247,20 @@ input:checked + .slider:before {
 #OneAccount-Agreement .agreementModal .md_content .modal_button_left:hover {
   background-color: #eeeeee;
 }
+@media (max-width: 768px) {
+  #signout-logo {
+    display: none;
+  }
 
+  #withdrawal-step1 div h3 {
+    font-size: 1.17em;
+  }
+
+  #withdrawal-term-text #bar {
+    display: none;
+  }
+
+}
 #signout-logo {
   background: url("../img/Illust_signout_logo.svg") no-repeat center;
   background-size: 100% 100%;
@@ -1329,6 +1342,11 @@ input:checked + .slider:before {
 }
 .table {
   margin-top: 24px;
+}
+@media (max-width: 768px) {
+  .tbl-hidden {
+    display: none;
+  }
 }
 
 /* Logo */
