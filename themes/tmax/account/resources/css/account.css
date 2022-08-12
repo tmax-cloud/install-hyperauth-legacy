@@ -1330,6 +1330,11 @@ input:checked + .slider:before {
 .table {
   margin-top: 24px;
 }
+@media (max-width: 768px) {
+  .tbl-hidden {
+    display: none;
+  }
+}
 
 /* Logo */
 /* SNS Logo*/
