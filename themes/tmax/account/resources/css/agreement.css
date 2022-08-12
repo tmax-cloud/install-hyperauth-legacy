@@ -31,41 +31,44 @@
 
 .wapl-logo{
   width: 150px;
-  height: 100px;
+  height: 60px;
   background: url(../img/logo_wapl.svg) no-repeat left top;
   background-size: 130px;
 }
 
 .portal-logo{
   width: 150px;
-  height: 100px;
+  height: 50px;
   background: url(../img/logo_portal.svg) no-repeat left top;
   background-size: 130px;
 }
 
 .hypermeeting-logo{
   width: 150px;
-  height: 100px;
+  height: 50px;
   background: url(../img/logo_hypermeeting.svg) no-repeat left top;
   background-size: 130px;
 }
 
 .waplclass-logo{
   width: 150px;
-  height: 100px;
+  height: 80px;
   background: url(../img/logo_waplclass.svg) no-repeat left top;
   background-size: 130px;
 }
 
 .waplmath-logo{
   width: 150px;
-  height: 100px;
+  height: 80px;
   background: url(../img/logo_waplmath.svg) no-repeat left top;
   background-size: 130px;
 }
 @media (max-width: 768px) {
   .rowBox{
     display: block !important;
+  }
+  .agree .optional-term {
+    margin-right: 30px;
   }
 }
 .rowBox{
