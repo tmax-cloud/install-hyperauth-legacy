@@ -364,11 +364,12 @@ async function submitWithdrawal() {
 
     withdrawalResult = true;
   } catch (e) {
-    if (e.response.status === 404){
+    if (e.response.status === 403){
       rejectService = e.response.data;
       withdrawalResult = false;
+    }else {
+      withdrawalResult = true;
     }
-    withdrawalResult = true;
     console.error(e);
   }
 
