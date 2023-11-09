@@ -1,7 +1,8 @@
-standalone/log/
+standalone/log/*
 standalone/tmp/
 standalone/data/
 standalone/configuration/standalone_xml_history/
 standalone/configuration/logging.properties
 standalone/deployments/*.deployed
 welcome-content/profile-picture
+*.iml
